@@ -1,0 +1,14 @@
+@mixin dark-mode($property) {
+  @media (prefers-color-scheme: dark) {
+    @content; // This allows additional styles to be passed in the mixin
+    #{$property}: theme(dark, $property);
+  }
+}
+
+// Mixin to apply themes based on light and dark modes
+@mixin apply-theme($property) {
+  #{$property}: theme(light, $property);
+  .dark & {
+    #{$property}: theme(dark, $property);
+  }
+}

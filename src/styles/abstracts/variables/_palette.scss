@@ -1,0 +1,14 @@
+$themes: (
+  'dark': (
+    background: #000,
+    color: #fff,
+  ),
+  'light': (
+    background: #fff,
+    color: #000,
+  ),
+);
+
+@function theme($mode, $property) {
+  @return map-get(map-get($themes, $mode), $property);
+}
