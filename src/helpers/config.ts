@@ -1,5 +1,5 @@
 export const APP_ROUTERS = {
-  HOME: '/',
+  INDEX: '/',
 }
 
 export const METADATA = {

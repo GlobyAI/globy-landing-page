@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '../styles/global.scss'
 import { METADATA } from '@/helpers/config'
+import ThemeProvider from '@/provider/ThemeProvider'
 
 export const metadata: Metadata = {
   title: METADATA.APP_NAME,
@@ -13,8 +14,12 @@ export default function RootLayout({
   children: React.ReactNode
 }): JSX.Element {
   return (
-    <html lang="vn">
-      <body suppressHydrationWarning={true}>{children}</body>
+    <html lang="se">
+      <ThemeProvider>
+        <body suppressHydrationWarning={true}>
+          <div className="app-wrapper">{children}</div>
+        </body>
+      </ThemeProvider>
     </html>
   )
 }
