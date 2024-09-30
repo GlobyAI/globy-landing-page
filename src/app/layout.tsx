@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import '../styles/global.scss'
 import { METADATA } from '@/helpers/config'
 import ThemeProvider from '@/provider/ThemeProvider'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: METADATA.APP_NAME,
@@ -16,8 +18,12 @@ export default function RootLayout({
   return (
     <html lang="se">
       <ThemeProvider>
-        <body suppressHydrationWarning={true}>
-          <div className="app-wrapper">{children}</div>
+        <body suppressHydrationWarning={true} className="light">
+          <div className="globy">
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </body>
       </ThemeProvider>
     </html>

@@ -1,14 +1,24 @@
 $themes: (
-  'dark': (
-    background: #000,
-    color: #fff,
+  light: (
+    input-bg: $light-gray,
+    input-bg-active: $white,
+    input-label: $black,
+    input-label-active: $purple,
+    input-label-error: $red,
+    input-border: $light-gray,
+    input-border-active: $purple,
+    input-border-error: $red,
+    input-bg-error: $light-red,
   ),
-  'light': (
-    background: #fff,
-    color: #000,
+  dark: (
+    input-bg: $light-gray,
+    input-bg-active: $white,
+    input-label: $black,
+    input-label-active: $purple,
+    input-label-error: $red,
+    input-border: $light-gray,
+    input-border-active: $purple,
+    input-border-error: $red,
+    input-bg-error: $light-red,
   ),
 );
-
-@function theme($mode, $property) {
-  @return map-get(map-get($themes, $mode), $property);
-}

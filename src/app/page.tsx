@@ -1,3 +1,12 @@
+'use client'
+
+import { useThemeContext } from '@/provider/ThemeProvider'
+
 export default function LandingPage() {
-  return <p>LandingPage</p>
+  const { toggleTheme } = useThemeContext()
+  return (
+    <div>
+      <button onClick={toggleTheme}>Switch mode</button>
+    </div>
+  )
 }

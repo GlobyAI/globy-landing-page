@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 
 export const ThemeContext = React.createContext({
-  theme: 'light',
+  isDark: false,
   toggleTheme: () => {},
 })
 
@@ -12,26 +12,30 @@ interface Props {
 
 export const useThemeContext = () => React.useContext(ThemeContext)
 export default function ThemeProvider({ children }: Props) {
-  const [theme, setTheme] = React.useState('light')
+  const [isDark, setIsDark] = React.useState(false)
   const toggleTheme = () => {
-    const switchedTheme = theme === 'light' ? 'dark' : 'light'
-    document.body.className = switchedTheme
-    setTheme(switchedTheme)
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('theme', switchedTheme)
+    if (isDark) {
+      document.body.className = 'light'
+      localStorage.setItem('theme', 'light')
+    } else {
+      document.body.className = 'dark'
+      localStorage.setItem('theme', 'dark')
     }
+    setIsDark(!isDark)
   }
   useEffect(() => {
-    const localTheme = localStorage.getItem('theme')
+    const localTheme = localStorage.getItem('theme') || 'null'
+
     if (localTheme) {
-      setTheme(localTheme)
+      document.body.className = localTheme
+      setIsDark(localTheme === 'dark')
     }
   }, [])
 
   return (
     <ThemeContext.Provider
       value={{
-        theme,
+        isDark,
         toggleTheme,
       }}
     >
