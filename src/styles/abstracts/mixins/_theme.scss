@@ -1,14 +1,25 @@
-@mixin dark-mode($property) {
-  @media (prefers-color-scheme: dark) {
-    @content; // This allows additional styles to be passed in the mixin
-    #{$property}: theme(dark, $property);
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .#{$theme} & {
+      $theme-map: () !global; // Initialize the theme map for the current theme
+
+      @each $key, $value in $map {
+        // Merge each key-value pair into the theme map
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+
+      @content; // Insert the content that will use this theme map
+      // Optionally clear the theme-map after use
+      $theme-map: null !global;
+    }
   }
 }
 
-// Mixin to apply themes based on light and dark modes
-@mixin apply-theme($property) {
-  #{$property}: theme(light, $property);
-  .dark & {
-    #{$property}: theme(dark, $property);
-  }
+@function t($key) {
+  @return map-get($theme-map, $key);
 }
