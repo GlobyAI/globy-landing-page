@@ -5,3 +5,9 @@
   height: 100%;
   @include flex(center, center);
 }
+
+.globy {
+  @include themed() {
+    background-color: t(body-bg);
+  }
+}

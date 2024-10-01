@@ -1,0 +1,36 @@
+button {
+  border-radius: 2.5rem;
+  border: 0.2rem solid;
+  border-color: transparent;
+  padding: $spacing * 2 $spacing * 4;
+  @include text(none, 500, 1.6rem);
+  transition: all 0.2s;
+  cursor: pointer;
+  @include themed() {
+    background-color: t(btn-bg);
+    color: t(btn-text-color);
+  }
+
+  &:hover {
+    @include themed() {
+      background-color: t(btn-bg-active);
+      border-color: t(btn-border-active);
+      color: t(btn-text-color-active);
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    @include themed() {
+      background-color: t(btn-bg-disabled);
+      color: t(btn-text-disabled);
+      border-color: t(btn-border-disabled-active);
+    }
+  }
+
+  &:disabled:hover {
+    @include themed() {
+      border-color: t(btn-border-disabled-active);
+    }
+  }
+}
