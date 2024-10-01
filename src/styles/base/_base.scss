@@ -7,9 +7,6 @@ html {
   font-size: 10px;
 }
 
-body {
-}
-
 ul,
 ol,
 li {
@@ -18,4 +15,21 @@ li {
 
 a {
   text-decoration: none;
+}
+
+fieldset,
+figure {
+  outline: none;
+  overflow: hidden;
+  border: none;
+}
+
+input,
+textarea {
+  outline: none;
+  border: none;
+}
+
+label {
+  display: block;
 }
