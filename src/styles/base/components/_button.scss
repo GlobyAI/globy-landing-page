@@ -1,21 +1,35 @@
 button {
-  border-radius: 2.5rem;
+  min-width: 13.4rem;
+  height: 5.6rem;
+  border-radius: 999999px;
   border: 0.2rem solid;
   border-color: transparent;
-  padding: $spacing * 2 $spacing * 4;
-  @include text(none, 500, 1.6rem);
-  transition: all 0.2s;
+  padding: 1.8rem 3.2rem;
+  @include text(null, 600, 1.6rem);
+  @include flex(space-between, center);
   cursor: pointer;
   @include themed() {
     background-color: t(btn-bg);
-    color: t(btn-text-color);
+    color: t(btn-text);
+  }
+  svg {
+    margin-right: 0.8rem;
+    fill-opacity: 1;
+    > * {
+      @include themed() {
+        fill: t(btn-text);
+      }
+    }
   }
 
   &:hover {
     @include themed() {
       background-color: t(btn-bg-active);
       border-color: t(btn-border-active);
-      color: t(btn-text-color-active);
+      color: t(btn-text-active);
+      svg > * {
+        fill: t(btn-text-active);
+      }
     }
   }
 
@@ -25,12 +39,18 @@ button {
       background-color: t(btn-bg-disabled);
       color: t(btn-text-disabled);
       border-color: t(btn-border-disabled-active);
+      svg > * {
+        fill: t(btn-icon-disabled);
+      }
     }
   }
 
   &:disabled:hover {
     @include themed() {
       border-color: t(btn-border-disabled-active);
+      svg > * {
+        fill: t(btn-icon-disabled-active);
+      }
     }
   }
 }

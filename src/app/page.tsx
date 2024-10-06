@@ -1,12 +1,10 @@
-'use client'
-
-import { useThemeContext } from '@/provider/ThemeProvider'
-
+import HowItWorks from '@/components/HowItWorks'
+import Intro from '@/components/Intro'
 export default function LandingPage() {
-  const { toggleTheme } = useThemeContext()
   return (
-    <div>
-      <button onClick={toggleTheme}>Switch mode</button>
-    </div>
+    <main className="globy__main">
+      <Intro />
+      <HowItWorks />
+    </main>
   )
 }

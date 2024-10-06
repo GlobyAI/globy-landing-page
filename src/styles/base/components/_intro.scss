@@ -1,0 +1,71 @@
+.globy__intro {
+  padding: 8rem 0;
+  @include grid(1fr, repeat(2, 1fr), 0);
+  .intro {
+    margin: 8rem auto;
+    max-width: 100rem;
+    width: 100%;
+    @include flex(center, center);
+    flex-direction: column;
+    &__heading {
+      text-align: center;
+      background: $intro-liner-gradient;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      span {
+        color: orange !important;
+      }
+      @include text(null, 800, 8rem);
+      line-height: 1.2;
+      margin-bottom: 3.2rem;
+    }
+    &__subtitle {
+      max-width: 61rem;
+      width: 100%;
+      text-align: center;
+      @include text($white, 500, 2.4rem);
+      margin-bottom: 3.2rem;
+    }
+
+    &__get-intro {
+      margin-bottom: 3.2rem;
+      @include flex(center, center);
+      color: white;
+      svg {
+        margin-right: 0.8rem;
+      }
+    }
+  }
+
+  .benefits {
+    width: 100rem;
+    margin: 8rem auto;
+    @include grid(repeat(4, 1fr), auto, 0);
+    gap: 2.4rem;
+    max-height: 27rem;
+    &__items {
+      height: 27rem;
+      width: 100%;
+      padding: 0 1.6rem;
+      text-align: center;
+      &__title {
+        @include text(null, 500, 2.4rem);
+        margin: 2rem 0;
+        @include themed() {
+          color: t(benefit-item-title);
+        }
+      }
+
+      &__content {
+        padding: 0.8rem;
+        text-align: center;
+        text-wrap: wrap;
+        @include text(null, 400, 1.6rem);
+        @include themed() {
+          color: t(benefit-item-content);
+        }
+      }
+    }
+  }
+}

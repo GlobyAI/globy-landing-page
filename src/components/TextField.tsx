@@ -1,17 +1,17 @@
 'use client'
-import './TextField.scss'
-import Image from 'next/image'
-
+import ErrorIcon from 'public/icons/error.svg'
 interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string
   error?: boolean
   helperText?: string
   borderless?: boolean
+  icon?: React.ReactNode
 }
 const TextField = (props: TextFieldProps) => {
-  const { className, label, id, error, helperText, value, ...rest } = props
+  const { className, label, id, error, helperText, value, icon, ...rest } =
+    props
 
-  let textfieldClassName = 'text-field'
+  let textfieldClassName = 'textfield'
   if (error && helperText !== '') {
     textfieldClassName += ` error`
   }
@@ -28,21 +28,18 @@ const TextField = (props: TextFieldProps) => {
 
   return (
     <fieldset className={textfieldClassName}>
-      <input id={id} value={value} {...rest} />
-
-      {label && (
-        <label htmlFor={id}>
-          <p>{label}</p>
-        </label>
-      )}
+      <div className="textfield__container">
+        <input id={id} value={value} {...rest} />
+        {label && (
+          <label htmlFor={id} className="textfield__label">
+            <p>{label}</p>
+          </label>
+        )}
+        {icon && <span className="textfield__icons">{icon}</span>}
+      </div>
       {error && helperText && (
         <small className="textfield__error">
-          <Image
-            src="/icons/error.svg"
-            alt="error-icon"
-            width={18}
-            height={18}
-          />
+          <ErrorIcon />
           {helperText}
         </small>
       )}

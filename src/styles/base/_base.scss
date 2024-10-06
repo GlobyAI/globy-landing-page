@@ -5,8 +5,14 @@
 }
 html {
   font-size: 10px;
+  font-family: $font-family;
 }
 
+body {
+  @include themed() {
+    background-color: t(app-bg);
+  }
+}
 ul,
 ol,
 li {

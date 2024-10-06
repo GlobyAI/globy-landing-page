@@ -1,0 +1,163 @@
+.textfield {
+  display: flex;
+  flex-direction: column;
+  min-width: 35rem;
+  position: relative;
+  overflow: hidden;
+  &__container {
+    position: relative;
+    .textfield__icons {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 1.6rem;
+      top: 1.6rem;
+      z-index: 1;
+      svg > * {
+        fill-opacity: 1;
+      }
+    }
+    input {
+      @include themed() {
+        background-color: t(input-bg);
+      }
+      width: 100%;
+      outline: 0;
+      width: 100%;
+      border-radius: 1.2rem;
+      border: 0.2rem solid;
+      height: 5.6rem;
+      display: block;
+      padding: 2.2rem 1.6rem 1.8rem;
+      padding-left: 5.6rem;
+      @include text(null, 500, 1.6rem);
+      border-color: transparent;
+      background-color: inherit;
+
+      &:not(:disabled):focus,
+      &:not(:disabled):focus-within,
+      &:not(:disabled):hover {
+        @include themed() {
+          border-color: t(input-border-active);
+          background-color: t(input-bg-active);
+        }
+
+        ~ .textfield__label {
+          top: 5%;
+          transform: translateY(0);
+          transform: scale(0.75);
+          p {
+            @include themed() {
+              color: t(input-label-active);
+            }
+          }
+        }
+        ~ .textfield__icons {
+          svg > * {
+            @include themed() {
+              fill: t(input-label-active);
+            }
+          }
+        }
+      }
+    }
+
+    .textfield__label {
+      pointer-events: none;
+      position: absolute;
+      padding: 0 0.2rem;
+      top: 50%;
+      transform: translateY(-50%) scale(1);
+      left: 5.6rem;
+      transform-origin: top left;
+      transition: all 0.2s ease-out;
+      p {
+        height: 100%;
+        width: 100%;
+        @include flex(left, center);
+        font-size: 2rem;
+        @include text(null, 500, null);
+        @include themed() {
+          color: t(input-label);
+        }
+      }
+    }
+  }
+  &.error {
+    .textfield__container {
+      .textfield__icons {
+        svg > * {
+          @include themed() {
+            fill: t(input-label-error) !important;
+          }
+        }
+      }
+      input {
+        @include themed() {
+          background-color: t(input-bg-error) !important;
+          border-color: t(input-border-error) !important;
+        }
+        &:focus-within,
+        &:hover {
+          @include themed() {
+            border-color: t(input-label-error) !important;
+          }
+        }
+      }
+      .textfield__label {
+        p {
+          @include themed() {
+            color: t(input-label-error) !important;
+          }
+        }
+      }
+    }
+  }
+
+  &.filled {
+    .text-field__container {
+      input {
+        @include themed() {
+          border-color: t(input-border);
+          background-color: t(input-bg);
+        }
+        &:focus,
+        &:focus-within,
+        &:hover {
+          @include themed() {
+            border-color: t(input-border);
+            background-color: t(input-bg);
+          }
+          + label {
+            transform: translate(0, 20%) scale(0.75);
+          }
+        }
+        + label {
+          transform: translate(0, 20%) scale(0.75);
+          p {
+            @include themed() {
+              color: t(input-label);
+            }
+          }
+        }
+      }
+    }
+  }
+  &__error {
+    @include flex(left, center);
+    @include text(null, 400, 1.4rem);
+    svg {
+      margin-right: 0.2rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      > * {
+        @include themed() {
+          fill: t(input-error-message) !important;
+        }
+      }
+    }
+    @include themed() {
+      color: t(input-error-message) !important;
+    }
+  }
+}

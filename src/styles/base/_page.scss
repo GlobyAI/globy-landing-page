@@ -1,0 +1,24 @@
+.globy {
+  display: grid;
+  grid-template-areas: 'header' 'main' 'footer';
+  overflow: hidden;
+
+  @include themed() {
+    background-color: t(app-bg);
+  }
+  &__header {
+    grid-area: header;
+    &__navbar {
+      height: 14rem;
+      width: 100%;
+      @include flex(center, center);
+    }
+  }
+  &__main {
+    grid-area: main;
+  }
+
+  &__footer {
+    grid-area: footer;
+  }
+}
