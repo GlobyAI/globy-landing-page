@@ -1,0 +1,124 @@
+.plans {
+  padding: 8rem 0;
+  position: relative;
+
+  &__subscription {
+    margin-top: 4.8rem;
+    .billing-circle {
+      border-radius: 10rem;
+      padding: 0.8rem;
+      margin: 0 auto;
+      margin-bottom: 4.8rem;
+      background-color: transparent;
+      border: 0.1rem solid $border-primary;
+      width: 37rem;
+      height: 6rem;
+      @include flex(space-between, center);
+      &__options {
+        width: 50%;
+        border-radius: 999999px;
+        background-color: transparent;
+        @include text($text-secondary, 400, 1.6rem);
+        @include flex(center, center);
+        height: 100%;
+        position: relative;
+        cursor: pointer;
+        &--annually {
+          padding-left: 1rem;
+        }
+        &.selected {
+          background-color: $plans-billing-selected-bg;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .pricing {
+      max-width: 95rem;
+      width: 100%;
+      margin: 0 auto;
+      @include grid(repeat(3, 1fr), auto, 2.4rem);
+      &__options {
+        border-radius: 1.6rem;
+        min-width: 30rem;
+        padding: 2.4rem;
+        background-color: $plans-pricing-options-bg;
+        &.business {
+          position: relative;
+          background-color: transparent;
+          border: 0.2rem solid $border-primary;
+          .business__icon {
+            position: absolute;
+            width: 6rem;
+            height: 7.5rem;
+            top: -1.3rem;
+            right: 2rem;
+            z-index: 10;
+          }
+          .option-detail {
+            &__name {
+              opacity: 1;
+
+              color: $plans-business-option-text;
+            }
+
+            &__price {
+              color: $text-secondary;
+              span {
+                opacity: 1;
+                color: $plans-business-option-text;
+              }
+            }
+
+            &__description {
+              color: $text-secondary;
+            }
+          }
+
+          .pricing__options__support-details {
+            color: $text-secondary;
+          }
+        }
+        .option-detail {
+          min-height: 15.3rem;
+          @include flex(space-between, flex-start);
+          flex-direction: column;
+          &__name {
+            text-transform: uppercase;
+            font-style: italic;
+            opacity: 0.5;
+            @include text($text-primary, 900, 2.4rem);
+          }
+          &__price {
+            @include text($text-primary, 900, 4.8rem);
+            span {
+              margin-left: -1rem;
+              opacity: 0.5;
+              @include text($text-primary, 700, 1.6rem);
+            }
+          }
+          &__description {
+            @include text($text-primary, 500, 1.6rem);
+          }
+        }
+
+        > button {
+          margin: 2.4rem 0;
+          width: 100%;
+        }
+
+        &__support-details {
+          padding: 1.2rem;
+          @include text($text-primary, 700, 1.6rem);
+          .support-details__items {
+            padding-bottom: 3.5rem;
+            @include flex(left, center);
+            > svg {
+              margin-right: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

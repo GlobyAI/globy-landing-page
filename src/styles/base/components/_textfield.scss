@@ -18,9 +18,7 @@
       }
     }
     input {
-      @include themed() {
-        background-color: t(input-bg);
-      }
+      background-color: $input-bg;
       width: 100%;
       outline: 0;
       width: 100%;
@@ -30,33 +28,18 @@
       display: block;
       padding: 2.2rem 1.6rem 1.8rem;
       padding-left: 5.6rem;
-      @include text(null, 500, 1.6rem);
+      @include text($text-primary, 500, 1.6rem);
       border-color: transparent;
-      background-color: inherit;
-
       &:not(:disabled):focus,
       &:not(:disabled):focus-within,
       &:not(:disabled):hover {
-        @include themed() {
-          border-color: t(input-border-active);
-          background-color: t(input-bg-active);
-        }
-
+        border-color: $input-border-active;
         ~ .textfield__label {
           top: 5%;
           transform: translateY(0);
           transform: scale(0.75);
           p {
-            @include themed() {
-              color: t(input-label-active);
-            }
-          }
-        }
-        ~ .textfield__icons {
-          svg > * {
-            @include themed() {
-              fill: t(input-label-active);
-            }
+            color: $input-label-active;
           }
         }
       }
@@ -76,10 +59,7 @@
         width: 100%;
         @include flex(left, center);
         font-size: 2rem;
-        @include text(null, 500, null);
-        @include themed() {
-          color: t(input-label);
-        }
+        @include text($input-label, 4 00, 1.6rem);
       }
     }
   }
@@ -87,77 +67,52 @@
     .textfield__container {
       .textfield__icons {
         svg > * {
-          @include themed() {
-            fill: t(input-label-error) !important;
-          }
+          fill: $input-label-error !important;
         }
       }
       input {
-        @include themed() {
-          background-color: t(input-bg-error) !important;
-          border-color: t(input-border-error) !important;
-        }
+        background-color: $input-bg-error !important;
+        border-color: $input-border-error !important;
         &:focus-within,
         &:hover {
-          @include themed() {
-            border-color: t(input-label-error) !important;
-          }
+          border-color: $input-label-error !important;
         }
       }
       .textfield__label {
         p {
-          @include themed() {
-            color: t(input-label-error) !important;
-          }
+          color: $input-label-error !important;
         }
       }
     }
   }
 
   &.filled {
-    .text-field__container {
+    .textfield__container {
       input {
-        @include themed() {
-          border-color: t(input-border);
-          background-color: t(input-bg);
-        }
-        &:focus,
-        &:focus-within,
-        &:hover {
-          @include themed() {
-            border-color: t(input-border);
-            background-color: t(input-bg);
-          }
-          + label {
-            transform: translate(0, 20%) scale(0.75);
-          }
-        }
-        + label {
-          transform: translate(0, 20%) scale(0.75);
-          p {
-            @include themed() {
-              color: t(input-label);
-            }
-          }
+        border-color: $input-border;
+        background-color: $input-bg;
+        border-color: $input-border-active;
+      }
+      .textfield__label {
+        top: 5%;
+        transform: translateY(0);
+        transform: scale(0.75);
+        p {
+          color: $input-label-active;
         }
       }
     }
   }
   &__error {
     @include flex(left, center);
-    @include text(null, 400, 1.4rem);
+    @include text($input-error-message, 400, 1.4rem);
     svg {
       margin-right: 0.2rem;
       width: 1.1rem;
       height: 1.1rem;
       > * {
-        @include themed() {
-          fill: t(input-error-message) !important;
-        }
+        fill: $input-error-message !important;
       }
-    }
-    @include themed() {
-      color: t(input-error-message) !important;
     }
   }
 }

@@ -2,10 +2,10 @@
   display: grid;
   grid-template-areas: 'header' 'main' 'footer';
   overflow: hidden;
-
-  @include themed() {
-    background-color: t(app-bg);
-  }
+  height: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  background-color: $app-bg;
   &__header {
     grid-area: header;
     &__navbar {
@@ -20,5 +20,31 @@
 
   &__footer {
     grid-area: footer;
+    @include box(100%, 25.4rem);
+    .footer-content {
+      padding: 8rem 0;
+      @include flex(center, center, column);
+      &__social-media {
+        width: 21rem;
+        margin-bottom: 5.1rem;
+        @include flex(space-between, center);
+        &__items {
+          svg {
+            width: 2.4rem;
+            height: 2.4rem;
+          }
+        }
+      }
+
+      &__copyright {
+        @include text($copyright, 600, 1.6rem);
+        font-style: italic;
+        @include flex(center, center);
+        span {
+          font-size: 2rem;
+          margin-right: 0.2rem;
+        }
+      }
+    }
   }
 }

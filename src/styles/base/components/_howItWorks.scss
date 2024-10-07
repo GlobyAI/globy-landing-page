@@ -1,24 +1,6 @@
 .how-it-works {
   padding: 8rem 0;
   position: relative;
-  &::after {
-    content: '';
-    width: 50%;
-    height: 0.1rem;
-    background-color: $charcoal-blue;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-  }
-  &__heading {
-    text-align: center;
-    @include themed() {
-      @include text(t(text-secondary), 800, 8rem);
-    }
-    margin-bottom: 8rem;
-  }
 
   &__chat-history {
     padding: 31rem 0 0;
@@ -52,14 +34,14 @@
         left: 0;
         width: 100%;
         height: 2rem;
-        background-color: $deep-space-blue;
-        box-shadow: 0 0 12rem 15rem $deep-space-blue;
+        background-color: $app-bg;
+        box-shadow: 0 0 6rem 15rem $deep-space-blue;
       }
     }
     .conversation {
       width: 100%;
       position: absolute;
-      top: 0;
+      top: 2rem;
       left: 50%;
       z-index: 10;
       transform: translateX(-50%);
@@ -70,7 +52,7 @@
         width: 100%;
         max-width: 80rem;
         padding: 4rem;
-        box-shadow: $drop-shadow;
+        box-shadow: $shadow;
         &__globy {
           padding: 0 1rem;
           position: relative;
@@ -81,8 +63,7 @@
           }
           &__heading {
             margin-bottom: 3.2rem;
-
-            @include flex(justify-between, center);
+            @include flex(space-between, center);
             > p {
               flex: 1;
               padding-left: 3.2rem;
@@ -177,9 +158,9 @@
                 padding: 0.6rem 1.2rem;
                 height: 3.6rem;
                 margin-bottom: 0.8rem;
-                border: 0.1rem solid $white;
+                border: 0.1rem solid $border-primary;
                 position: relative;
-                @include text($white, 400, 1.6rem);
+                @include text($text-secondary, 400, 1.6rem);
                 @include flex(left, center);
                 opacity: 0.6;
                 &::after {
@@ -202,11 +183,9 @@
                   height: 3.2rem;
                   @include flex(left, center);
                   background-color: $white;
-                  box-shadow: $alternative-shadow;
+                  box-shadow: 4px 4px 0px 0px #00000040;
                   @include text($purple, 700, 1.6rem);
-                  @include themed() {
-                    border: 0.1rem solid t(border);
-                  }
+                  border: 0.1rem solid $border-primary;
                   &:nth-child(1) {
                     margin-right: 0.4rem;
                   }
@@ -223,15 +202,11 @@
                   display: none;
                 }
               }
-              @include themed() {
-                border: 0.2rem solid t(border);
-              }
+              border: 0.2rem solid $border-primary;
               .avatar {
                 background: transparent;
                 right: 102%;
-                @include themed() {
-                  border: 0.2rem solid t(border);
-                }
+                border: 0.2rem solid $border-primary;
                 img,
                 svg {
                   display: none;
@@ -246,16 +221,13 @@
         max-width: 80rem;
         width: 100%;
         margin: 0 auto;
-        @include flex(center, center);
-        flex-direction: column;
+        @include flex(center, center, column);
         h6 {
           width: 100%;
           text-align: center;
           font-style: italic;
           margin-bottom: 3.2rem;
-          @include themed() {
-            @include text(t(text-secondary), 600, 2.4rem);
-          }
+          @include text($text-secondary, 600, 2.4rem);
         }
       }
     }

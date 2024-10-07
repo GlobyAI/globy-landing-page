@@ -3,12 +3,12 @@ import GlobyIcon from 'public/icons/globy.svg'
 import ArrowUpIcon from 'public/icons/circle-arrow-up.svg'
 import Message from './Message'
 import ChatHistory from './ChatHistory'
-import Link from 'next/link'
+import Button from './Button'
 
 export default function HowItWorks() {
   return (
-    <section className="how-it-works">
-      <h2 className="how-it-works__heading">How it works</h2>
+    <section className="how-it-works divider">
+      <h2 className="heading">How it works</h2>
       <div className="how-it-works__chat-history">
         <div className="bg-grid"></div>
         <div className="bg-screen"></div>
@@ -57,12 +57,7 @@ export default function HowItWorks() {
               modern and completely unique websites. <br />
               You get easy help to edit the website without any prior knowledge.
             </h6>
-            <Link href="/#sign-up">
-              <button>
-                <GlobyIcon />
-                Join now
-              </button>
-            </Link>
+            <Button content="Sign up now" href="#contact" />
           </div>
         </div>
       </div>

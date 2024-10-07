@@ -1,77 +1,46 @@
-$themes: (
-  light: (
-    text-primary: $black,
-    text-secondary: $white,
-    app-bg: $deep-space-blue,
-    border: $gray-200,
+$text-primary: $black;
+$text-secondary: $white;
+$app-bg: $deep-space-blue;
 
-    input-bg: rgba($cadet-gray, 0.1),
-    input-bg-active: $light-purple-20,
-    input-bg-error: $light-red,
-    input-label: $black,
-    input-label-active: $purple,
-    input-label-error: $red,
-    input-border: rgba($cadet-gray, 0.1),
-    input-border-active: $purple,
-    input-border-error: $red,
-    input-text: $black,
-    input-error-message: $red,
-    // btn
-    btn-bg: $purple,
-    btn-bg-active: $light-purple-80,
-    btn-text: $white,
-    btn-text-active: $purple,
-    btn-border-active: $purple,
-    btn-bg-disabled: rgba($cadet-gray, 0.1),
-    btn-border-disabled: transparent,
-    btn-border-disabled-active: $light-purple-20,
-    btn-text-disabled: $gray-200,
-    btn-icon-disabled: $gray-200,
-    btn-icon-disabled-active: $gray-200,
+$border-primary: $white;
+$divider: $charcoal-blue;
 
-    //info -  benefits
-    benefit-item-title: $white,
-    benefit-item-content: $cadet-gray,
+$input-bg: $white;
+$input-bg-error: $light-red;
+$input-label: $black;
+$input-label-active: $purple;
+$input-label-error: $red;
+$input-border: rgba($cadet-gray, 0.1);
+$input-border-active: rgba($purple, 0.2);
+$input-border-error: $red;
+$input-error-message: $red;
 
-    //message
-    message-bg-globy: $gray-100,
-    message-bg-customer: $purple,
-  ),
-  dark: (
-    text-primary: $black,
-    text-secondary: $white,
-    app-bg: $deep-space-blue,
-    border: $gray-200,
-    input-bg: rgba($cadet-gray, 0.1),
-    input-bg-active: $light-purple-20,
-    input-bg-error: $light-red,
-    input-label: $black,
-    input-label-active: $purple,
-    input-label-error: $red,
-    input-border: rgba($cadet-gray, 0.1),
-    input-border-active: $purple,
-    input-border-error: $red,
-    input-text: $black,
-    input-error-message: $white,
+// Button
+$btn-bg: $purple;
+$btn-bg-active: $light-purple-80;
+$btn-text: $white;
+$btn-text-active: $purple;
+$btn-border-active: $purple;
+$btn-bg-disabled: rgba($cadet-gray, 0.1);
+$btn-border-disabled-active: $gray-200;
+$btn-text-disabled: $gray-200;
+$btn-icon-disabled: $gray-200;
+$btn-icon-disabled-active: $gray-200;
 
-    // btn
-    btn-bg: $light-purple-80,
-    btn-bg-active: $charcoal-blue,
-    btn-text: $purple,
-    btn-text-active: $white,
-    btn-border-active: $purple,
-    btn-bg-disabled: $charcoal-blue,
-    btn-border-disabled: $gray-200,
-    btn-border-disabled-active: $gray-200,
-    btn-text-disabled: $gray-200,
-    btn-icon-disabled: $gray-200,
-    btn-icon-disabled-active: $gray-200,
-    //info -  benefits
-    benefit-item-title: $white,
-    benefit-item-content: $cadet-gray,
+// Info - Benefits
+$benefit-item-title: $white;
+$benefit-item-content: $cadet-gray;
 
-    //message
-    message-bg-globy: $gray-100,
-    message-bg-customer: $purple,
-  ),
-);
+// Message
+$message-bg-globy: $gray-100;
+$message-bg-customer: $purple;
+
+// Plans
+$plans-options-bg: $white;
+$plans-billing-selected-bg: $purple;
+$plans-pricing-options-bg: $white;
+$plans-business-option-text: $purple;
+
+//footer
+
+$copyright: $slate-gray;

@@ -5,18 +5,16 @@
     margin: 8rem auto;
     max-width: 100rem;
     width: 100%;
-    @include flex(center, center);
-    flex-direction: column;
+    @include flex(center, center, column);
     &__heading {
       text-align: center;
       background: $intro-liner-gradient;
       -webkit-background-clip: text;
       background-clip: text;
-      color: transparent;
       span {
         color: orange !important;
       }
-      @include text(null, 800, 8rem);
+      @include text(transparent, 800, 8rem);
       line-height: 1.2;
       margin-bottom: 3.2rem;
     }
@@ -24,14 +22,14 @@
       max-width: 61rem;
       width: 100%;
       text-align: center;
-      @include text($white, 500, 2.4rem);
+      @include text($text-secondary, 500, 2.4rem);
       margin-bottom: 3.2rem;
     }
 
     &__get-intro {
       margin-bottom: 3.2rem;
       @include flex(center, center);
-      color: white;
+      color: $text-secondary;
       svg {
         margin-right: 0.8rem;
       }
@@ -50,21 +48,31 @@
       padding: 0 1.6rem;
       text-align: center;
       &__title {
-        @include text(null, 500, 2.4rem);
+        @include text($text-secondary, 500, 2.4rem);
         margin: 2rem 0;
-        @include themed() {
-          color: t(benefit-item-title);
-        }
       }
 
       &__content {
         padding: 0.8rem;
         text-align: center;
         text-wrap: wrap;
-        @include text(null, 400, 1.6rem);
-        @include themed() {
-          color: t(benefit-item-content);
-        }
+        @include text($benefit-item-content, 400, 1.6rem);
+      }
+    }
+  }
+
+  .dots {
+    @include flex(space-between, center, column);
+    height: 8.6rem;
+    &__items {
+      background-color: $text-secondary;
+      border-radius: 50%;
+      @include box(0.7rem, 0.7rem);
+      &:nth-child(2) {
+        @include box(1.2rem, 1.2rem);
+      }
+      &:nth-child(3) {
+        @include box(2.4rem, 2.4rem);
       }
     }
   }

@@ -6,12 +6,11 @@
 html {
   font-size: 10px;
   font-family: $font-family;
+  height: 100%;
 }
 
 body {
-  @include themed() {
-    background-color: t(app-bg);
-  }
+  height: 100%;
 }
 ul,
 ol,

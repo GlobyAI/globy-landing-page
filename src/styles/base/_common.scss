@@ -1,0 +1,24 @@
+.heading {
+  margin: 0 auto;
+  text-align: center;
+  @include text($text-secondary, 800, 8rem);
+  line-height: 7.7rem;
+  height: 15.6rem;
+  max-width: 78rem;
+  width: 100%;
+  font-style: italic;
+}
+
+.divider {
+  &::after {
+    content: '';
+    width: 71rem;
+    height: 0.1rem;
+    border-bottom: 0.1rem solid $divider;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+}

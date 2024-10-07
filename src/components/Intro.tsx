@@ -1,10 +1,9 @@
 import React from 'react'
-import GlobyIcon from 'public/icons/globy.svg'
 import AppWindowICon from 'public/icons/app-window.svg'
 import MessageCircleHeartIcon from 'public/icons/message-circle-heart.svg'
 import AlarmClockIcon from 'public/icons/alarm-clock.svg'
 import EarthIcon from 'public/icons/earth.svg'
-import Link from 'next/link'
+import Button from './Button'
 export default function Intro() {
   return (
     <section className="globy__intro">
@@ -18,12 +17,7 @@ export default function Intro() {
           Join our waiting list and be among the first to get access when we
           launch!
         </h5>
-        <Link href="/#sign-up">
-          <button>
-            <GlobyIcon />
-            Join now
-          </button>
-        </Link>
+        <Button content="Join now" href="#contact" />
       </div>
 
       <div className="benefits">
@@ -60,6 +54,12 @@ export default function Intro() {
             from day one.
           </p>
         </article>
+      </div>
+
+      <div className="dots">
+        <span className="dots__items"></span>
+        <span className="dots__items"></span>
+        <span className="dots__items"></span>
       </div>
     </section>
   )

@@ -3,10 +3,8 @@
   border-radius: 999999px;
   padding: 2.4rem;
   position: relative;
-  @include flex(justify-between, center);
-  @include themed() {
-    background-color: t(message-bg-globy);
-  }
+  @include flex(space-between, center);
+  background-color: $message-bg-globy;
   &__content {
     width: fit-content;
   }
@@ -16,17 +14,11 @@
   }
 
   &--globy {
-    @include themed() {
-      background-color: t(message-bg-globy);
-      @include text(t(text-primary), 400, 1.6rem);
-    }
+    @include text($text-primary, 400, 1.6rem);
   }
   &--customer {
-    background-color: $purple;
-    @include themed() {
-      @include text(t(text-secondary), 400, 1.6rem);
-      background-color: t(message-bg-customer);
-    }
+    @include text($text-secondary, 400, 1.6rem);
+    background-color: $message-bg-customer;
   }
 
   .bold {
@@ -39,14 +31,14 @@
   top: 0;
   right: 98%;
   z-index: 10;
-  border: 0.1rem solid $white;
+  border: 0.1rem solid $border-primary;
   @include box(4rem, 4rem);
   @include flex(center, center);
   border-radius: 50%;
-  box-shadow: $drop-shadow;
+  box-shadow: $shadow;
   background-color: $gray-100;
   svg > * {
-    fill: $black;
+    fill: $text-primary;
   }
   &.lg {
     border-width: 0.2rem;
