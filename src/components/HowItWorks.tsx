@@ -1,15 +1,17 @@
-import React from 'react'
 import GlobyIcon from 'public/icons/globy.svg'
 import ArrowUpIcon from 'public/icons/circle-arrow-up.svg'
 import Message from './Message'
 import ChatHistory from './ChatHistory'
 import Button from './Button'
+import Link from 'next/link'
 
 export default function HowItWorks() {
   return (
-    <section className="how-it-works divider">
+    <section className="globy__how-it-works divider">
+      <div className="circle"></div>
+      <div className="circle"></div>
       <h2 className="heading">How it works</h2>
-      <div className="how-it-works__chat-history">
+      <div className="globy__how-it-works__chat-history">
         <div className="bg-grid"></div>
         <div className="bg-screen"></div>
         <div className="conversation">
@@ -50,14 +52,15 @@ export default function HowItWorks() {
           </div>
 
           <ChatHistory />
-
           <div className="presentation">
             <h6>
               <strong>Globy</strong> creates professional, <br /> relevant,
               modern and completely unique websites. <br />
               You get easy help to edit the website without any prior knowledge.
             </h6>
-            <Button content="Sign up now" href="#contact" />
+            <Link href="#contact">
+              <Button>Sign up now</Button>
+            </Link>
           </div>
         </div>
       </div>

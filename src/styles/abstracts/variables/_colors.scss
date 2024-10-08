@@ -36,3 +36,9 @@ $bg-liner-gradient: linear-gradient(
 $intro-liner-gradient: linear-gradient(172deg, #ffffff 47.16%, #b239e8 81.55%);
 $shadow: 0px 4px 4px 0px #00000040;
 $alternative-shadow: 4px 4px 0px 0px #00000040;
+$circle-gradient: radial-gradient(
+  50% 50% at 50% 50%,
+  #041221 45.5%,
+  #061626 80%,
+  #0f2236 100%
+);

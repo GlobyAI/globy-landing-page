@@ -22,3 +22,10 @@
     z-index: 10;
   }
 }
+
+.circle {
+  background: $circle-gradient;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}

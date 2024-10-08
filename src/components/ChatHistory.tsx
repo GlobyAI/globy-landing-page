@@ -1,4 +1,3 @@
-import React from 'react'
 import Message from './Message'
 
 export default function ChatHistory() {
@@ -31,7 +30,6 @@ export default function ChatHistory() {
       </li>
       <li className="chat-history__quote-message">
         <Message />
-
         <Message isCustomer />
       </li>
     </ul>

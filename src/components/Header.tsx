@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 import { APP_ROUTERS } from '@/helpers/config'
 import Link from 'next/link'

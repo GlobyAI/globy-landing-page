@@ -1,12 +1,15 @@
-import React from 'react'
 import AppWindowICon from 'public/icons/app-window.svg'
 import MessageCircleHeartIcon from 'public/icons/message-circle-heart.svg'
 import AlarmClockIcon from 'public/icons/alarm-clock.svg'
 import EarthIcon from 'public/icons/earth.svg'
 import Button from './Button'
-export default function Intro() {
+import Link from 'next/link'
+export default function Hero() {
   return (
-    <section className="globy__intro">
+    <section className="globy__hero">
+      <div className="circle"></div>
+      <div className="circle"></div>
+      <div className="circle"></div>
       <div className="intro">
         <h1 className="intro__heading">
           Build unique websites faster{' '}
@@ -17,7 +20,9 @@ export default function Intro() {
           Join our waiting list and be among the first to get access when we
           launch!
         </h5>
-        <Button content="Join now" href="#contact" />
+        <Link href="#contact">
+          <Button>Join now</Button>
+        </Link>
       </div>
 
       <div className="benefits">

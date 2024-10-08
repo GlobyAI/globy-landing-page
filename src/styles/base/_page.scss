@@ -3,14 +3,15 @@
   grid-template-areas: 'header' 'main' 'footer';
   overflow: hidden;
   height: 100%;
-  overflow-y: auto;
   scroll-behavior: smooth;
+  overflow-y: auto;
   background-color: $app-bg;
+  position: relative;
+
   &__header {
     grid-area: header;
     &__navbar {
-      height: 14rem;
-      width: 100%;
+      @include box(100%, $header-height);
       @include flex(center, center);
     }
   }
@@ -20,8 +21,19 @@
 
   &__footer {
     grid-area: footer;
-    @include box(100%, 25.4rem);
-    .footer-content {
+    position: relative;
+    min-height: 88rem;
+    overflow: hidden;
+    @include flex(center, center, column);
+
+    .circle {
+      @include box(244rem, 244rem);
+      top: 15%;
+      right: - calc(244rem / 9);
+    }
+
+    .footer {
+      flex: 1;
       padding: 8rem 0;
       @include flex(center, center, column);
       &__social-media {

@@ -1,5 +1,26 @@
-.globy__intro {
+$circle-1: 110rem;
+$circle-2: 145rem;
+$circle-3: 64rem;
+.globy__hero {
   padding: 8rem 0;
+  position: relative;
+  .circle:nth-child(1) {
+    right: -$circle-1 / 2;
+    top: -$circle-1 / 2;
+    @include box($circle-1, $circle-1);
+  }
+
+  .circle:nth-child(2) {
+    left: -$circle-2 / 2;
+    top: -$header-height;
+    @include box($circle-2, $circle-2);
+  }
+  .circle:nth-child(3) {
+    right: 2%;
+    bottom: 10%;
+    @include box($circle-3, $circle-3);
+  }
+
   @include grid(1fr, repeat(2, 1fr), 0);
   .intro {
     margin: 8rem auto;
@@ -39,7 +60,10 @@
   .benefits {
     width: 100rem;
     margin: 8rem auto;
-    @include grid(repeat(4, 1fr), auto, 0);
+    @include grid(repeat(2, 1fr), auto, 0);
+    @include breakpoint(md) {
+      @include grid(repeat(4, 1fr), auto, 0);
+    }
     gap: 2.4rem;
     max-height: 27rem;
     &__items {
