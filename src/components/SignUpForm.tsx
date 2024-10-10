@@ -6,7 +6,7 @@ import EmailIcon from 'public/icons/email.svg'
 import UserIcon from 'public/icons/user.svg'
 import IndustryIcon from 'public/icons/industry.svg'
 
-export default function ContactForm() {
+export default function SignUpForm() {
   const [form, setForm] = useState({
     fullName: '',
     email: '',
@@ -17,7 +17,7 @@ export default function ContactForm() {
     setForm({ ...form, [name]: value })
   }
   return (
-    <form className="contact__form">
+    <form className="sign-up__form">
       <TextField
         label="Full name"
         icon={<UserIcon />}

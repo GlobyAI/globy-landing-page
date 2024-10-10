@@ -58,7 +58,7 @@ export default function HowItWorks() {
               modern and completely unique websites. <br />
               You get easy help to edit the website without any prior knowledge.
             </h6>
-            <Link href="#contact">
+            <Link href="#sign-up">
               <Button>Sign up now</Button>
             </Link>
           </div>

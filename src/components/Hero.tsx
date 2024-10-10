@@ -17,7 +17,7 @@ export default function Hero() {
           Join our waiting list and be among the first to get access when we
           launch!
         </h5>
-        <Link href="#contact">
+        <Link href="#sign-up">
           <Button>Join now</Button>
         </Link>
       </div>
