@@ -17,10 +17,10 @@ export default function HowItWorks() {
         <div className="conversation">
           <div className="question">
             <div className="question__globy">
-              <figure className="avatar">
-                <GlobyIcon />
-              </figure>
               <div className="question__globy__heading">
+                <figure className="avatar">
+                  <GlobyIcon />
+                </figure>
                 <p>QUESTION 3 OF 10</p>
                 <ul className="dot-process-bar">
                   <li className="dot-process-bar__dots done"></li>

@@ -1,6 +1,9 @@
 button {
   min-width: 13.4rem;
-  height: 5.6rem;
+  height: 4.8rem;
+  @include breakpoint(md) {
+    height: 5.6rem;
+  }
   border-radius: 999999px;
   border: 0.2rem solid;
   border-color: transparent;

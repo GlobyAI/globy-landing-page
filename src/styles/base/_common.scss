@@ -1,12 +1,16 @@
 .heading {
   margin: 0 auto;
   text-align: center;
-  @include text($text-secondary, 800, 8rem);
-  line-height: 7.7rem;
-  height: 15.6rem;
-  max-width: 78rem;
+  @include text($text-primary, 800, 4rem, 4.8rem);
   width: 100%;
   font-style: italic;
+  margin-bottom: 6.5rem;
+  @include breakpoint(lg) {
+    margin-bottom: 4.8rem;
+    max-width: 78rem;
+    font-size: 8rem;
+    line-height: 7.7rem;
+  }
 }
 
 .divider {

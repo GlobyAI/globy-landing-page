@@ -1,7 +1,7 @@
 .textfield {
   display: flex;
   flex-direction: column;
-  min-width: 35rem;
+  width: 100%;
   position: relative;
   overflow: hidden;
   &__container {
@@ -21,14 +21,13 @@
       background-color: $input-bg;
       width: 100%;
       outline: 0;
-      width: 100%;
       border-radius: 1.2rem;
       border: 0.2rem solid;
       height: 5.6rem;
       display: block;
       padding: 2.2rem 1.6rem 1.8rem;
       padding-left: 5.6rem;
-      @include text($text-primary, 500, 1.6rem);
+      @include text($text-secondary, 500, 1.6rem);
       border-color: transparent;
       &:not(:disabled):focus,
       &:not(:disabled):focus-within,
@@ -58,8 +57,10 @@
         height: 100%;
         width: 100%;
         @include flex(left, center);
-        font-size: 2rem;
-        @include text($input-label, 4 00, 1.6rem);
+        @include text($input-label, 400, 1.6rem);
+        @include breakpoint(lg) {
+          font-size: 2rem;
+        }
       }
     }
   }

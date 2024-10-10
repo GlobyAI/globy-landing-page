@@ -1,7 +1,6 @@
 .globy__plans {
   padding: 8rem 0;
   position: relative;
-
   &__subscription {
     margin-top: 4.8rem;
     .billing-circle {
@@ -11,20 +10,31 @@
       margin-bottom: 4.8rem;
       background-color: transparent;
       border: 0.1rem solid $border-primary;
-      width: 37rem;
+      max-width: 37rem;
       height: 6rem;
       @include flex(space-between, center);
       &__options {
         width: 50%;
         border-radius: 999999px;
         background-color: transparent;
-        @include text($text-secondary, 400, 1.6rem);
+        @include text($text-primary, 400, 1.2rem);
         @include flex(center, center);
         height: 100%;
         position: relative;
         cursor: pointer;
+        transition: all 0.2s ease;
+        @include breakpoint(lg) {
+          font-size: 1.6rem;
+        }
         &--annually {
           padding-left: 1rem;
+          svg {
+            transform: scale(0.8);
+
+            @include breakpoint(lg) {
+              transform: scale(1);
+            }
+          }
         }
         &.selected {
           background-color: $plans-billing-selected-bg;
@@ -36,11 +46,17 @@
     .pricing-tiers {
       max-width: 95rem;
       width: 100%;
-      margin: 0 auto;
-      @include grid(repeat(3, 1fr), auto, 2.4rem);
+      @include grid(repeat(1, 1fr), auto, 2.4rem);
+      @include breakpoint(lg) {
+        @include grid(repeat(3, 1fr), auto, 4.8rem);
+        margin: 0 auto;
+      }
       &__options {
         border-radius: 1.6rem;
-        min-width: 30rem;
+        @include breakpoint(lg) {
+          max-width: 30rem;
+        }
+        width: 100%;
         padding: 2.4rem;
         background-color: $plans-pricing-options-bg;
         &.business {
@@ -57,13 +73,12 @@
           }
           .option-detail {
             &__name {
-              opacity: 1;
-
               color: $plans-business-option-text;
+              opacity: 1;
             }
 
             &__price {
-              color: $text-secondary;
+              color: $text-primary;
               span {
                 opacity: 1;
                 color: $plans-business-option-text;
@@ -71,12 +86,11 @@
             }
 
             &__description {
-              color: $text-secondary;
+              color: $text-primary;
             }
           }
-
-          .pricing__options__support-details {
-            color: $text-secondary;
+          .support-details {
+            color: $text-primary;
           }
         }
         .option-detail {
@@ -87,18 +101,18 @@
             text-transform: uppercase;
             font-style: italic;
             opacity: 0.5;
-            @include text($text-primary, 900, 2.4rem);
+            @include text($text-secondary, 900, 2.4rem);
           }
           &__price {
-            @include text($text-primary, 900, 4.8rem);
+            @include text($text-secondary, 900, 4.8rem);
             span {
               margin-left: -1rem;
               opacity: 0.5;
-              @include text($text-primary, 700, 1.6rem);
+              @include text($text-secondary, 700, 1.6rem);
             }
           }
           &__description {
-            @include text($text-primary, 500, 1.6rem);
+            @include text($text-secondary, 500, 1.6rem);
           }
         }
 
@@ -107,10 +121,10 @@
           width: 100%;
         }
 
-        &__support-details {
+        .support-details {
           padding: 1.2rem;
-          @include text($text-primary, 700, 1.6rem);
-          .support-details__items {
+          @include text($text-secondary, 700, 1.6rem);
+          &__items {
             padding-bottom: 3.5rem;
             @include flex(left, center);
             > svg {

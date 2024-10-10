@@ -10,6 +10,7 @@ export default function manifest(): MetadataRoute.Manifest {
     display: 'standalone',
     background_color: '#041221',
     theme_color: '#041221',
+    id: '/',
     icons: [
       {
         src: '/icons/globy-black.svg',
@@ -21,8 +22,8 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: 'en',
     screenshots: [
       {
-        src: '/images/screenshot-pc.png',
-        sizes: '1512x4775',
+        src: '/images/screen-shot.png',
+        sizes: '3840x3840',
         type: 'image/png',
       },
     ],

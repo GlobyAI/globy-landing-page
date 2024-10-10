@@ -1,6 +1,4 @@
 .globy {
-  display: grid;
-  grid-template-areas: 'header' 'main' 'footer';
   overflow: hidden;
   height: 100%;
   scroll-behavior: smooth;
@@ -9,27 +7,39 @@
   position: relative;
 
   &__header {
-    grid-area: header;
+    z-index: 100;
     &__navbar {
-      @include box(100%, $header-height);
-      @include flex(center, center);
+      padding: 3.5rem;
+      @include box(100%, 8.6rem);
+      @include flex(left, center);
+      @include breakpoint(md) {
+        height: $header-height;
+        justify-content: center;
+        padding: 0;
+      }
+      > a {
+        position: relative;
+        @include box(7rem, 2.8rem);
+        @include breakpoint(md) {
+          @include box(15.6rem, 5.8rem);
+        }
+      }
     }
   }
   &__main {
-    grid-area: main;
+    padding: 0 4.5rem;
   }
 
   &__footer {
-    grid-area: footer;
     position: relative;
     min-height: 88rem;
     overflow: hidden;
     @include flex(center, center, column);
-
     .circle {
-      @include box(244rem, 244rem);
-      top: 15%;
-      right: - calc(244rem / 9);
+      width: 200%;
+      aspect-ratio: 1 / 1;
+      top: 12%;
+      right: -50%;
     }
 
     .footer {

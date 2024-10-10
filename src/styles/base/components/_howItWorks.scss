@@ -5,25 +5,30 @@ $circle-2: 64rem;
   padding: 8rem 0;
   position: relative;
   .circle:nth-child(1) {
-    right: -$circle-1 / 3;
+    right: -$circle-1 / 2;
     top: 5%;
     @include box($circle-1, $circle-1);
   }
   .circle:nth-child(2) {
-    left: -8%;
+    left: -20%;
     top: 30%;
     @include box($circle-2, $circle-2);
   }
   &__chat-history {
-    padding: 31rem 0 0;
     position: relative;
+    padding: 34rem 0 0;
+
+    @include breakpoint(lg) {
+    }
     .bg-grid {
       width: 100%;
       height: 90rem;
-      background-image: url('../../../../public/images/how-it-works-grid.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center center;
+      @include breakpoint(lg) {
+        background-image: url('../../../../public/images/how-it-works-grid.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
     }
 
     .bg-screen {
@@ -35,10 +40,12 @@ $circle-2: 64rem;
       width: 100%;
       max-width: 114rem;
       height: 78rem;
-      background-image: url('../../../../public/images/how-it-works-screen.png');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
+      @include breakpoint(lg) {
+        background-image: url('../../../../public/images/how-it-works-screen.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
       &::after {
         position: absolute;
         content: '';
@@ -61,33 +68,52 @@ $circle-2: 64rem;
         margin: 0 auto;
         background-color: $white;
         border-radius: 2.4rem;
-        width: 100%;
-        max-width: 80rem;
-        padding: 4rem;
         box-shadow: $shadow;
+        width: 100%;
+        padding: 1.2rem 0;
+        max-width: 30rem;
+        @include breakpoint(lg) {
+          max-width: 80rem;
+          padding: 4rem 0;
+        }
+
         &__globy {
-          padding: 0 1rem;
           position: relative;
-          margin-bottom: 3.2rem;
-          .avatar {
-            top: -1rem;
-            left: -1rem;
-          }
-          &__heading {
+          margin-bottom: 2.5rem;
+          padding: 0 2.6rem 0 1.2rem;
+          @include breakpoint(lg) {
             margin-bottom: 3.2rem;
+            padding: 0 2.6rem;
+          }
+          position: relative;
+          &__heading {
+            .avatar {
+              position: relative;
+              margin-right: 1rem;
+              top: unset;
+              right: unset;
+            }
+            padding-bottom: 2.5rem;
+            @include breakpoint(lg) {
+              margin-bottom: 3.2rem;
+            }
             @include flex(space-between, center);
             > p {
               flex: 1;
-              padding-left: 3.2rem;
-              @include text($cadet-gray, 500, 1.6rem);
+              @include text($cadet-gray, 500, 1rem);
+              @include breakpoint(lg) {
+                font-size: 1.6rem;
+              }
             }
             .dot-process-bar {
-              width: 18rem;
               height: 1.2rem;
-              @include flex(center, center);
-              @include grid(repeat(10, 1fr), auto, 10px);
+              width: 7.4rem;
+              @include flex(space-between, center);
+              @include breakpoint(lg) {
+                width: 18rem;
+              }
               .dot-process-bar__dots {
-                @include box(0.8rem, 0.8rem);
+                @include box(0.4rem, 0.4rem);
                 border-radius: 50%;
                 border: 1px solid $purple;
                 &.done {
@@ -95,28 +121,59 @@ $circle-2: 64rem;
                 }
 
                 &.current {
-                  @include box(1.2rem, 1.2rem);
+                  @include box(0.8rem, 0.8rem);
+                  @include breakpoint(lg) {
+                    @include box(1.2rem, 1.2rem);
+                  }
+                }
+
+                @include breakpoint(lg) {
+                  @include box(0.8rem, 0.8rem);
+                  @include box(0.8rem, 0.8rem);
                 }
               }
             }
           }
           &__greeting {
-            font-size: 3.8rem !important;
+            font-size: 1.4rem;
+            line-height: 2rem;
             font-weight: 700;
-            line-height: 4rem;
             font-style: italic;
+            padding-left: 1rem;
+            word-break: break-all;
+            @include breakpoint(lg) {
+              line-height: 4rem;
+              padding: 0 1rem;
+              font-size: 3.8rem !important;
+            }
           }
         }
 
         &__customer {
           position: relative;
+          padding: 0 1.25rem;
+          @include breakpoint(lg) {
+            padding: 0 4rem;
+          }
           & .message {
+            .avatar {
+              top: -2rem;
+              left: 0rem;
+              @include breakpoint(lg) {
+                left: -2rem;
+              }
+            }
             height: 5.6rem;
-            padding: 1.8rem;
             padding-left: 4.2rem !important;
             &__content {
               position: relative;
-              margin-right: 0.8rem;
+              word-break: break-all;
+              width: fit-content;
+              margin-right: 2rem;
+              @include flex(left, center);
+              @include breakpoint(lg) {
+                margin-right: 0.8rem;
+              }
               &::after {
                 content: '';
                 position: absolute;
@@ -128,10 +185,6 @@ $circle-2: 64rem;
                 background-color: $white;
               }
             }
-            .avatar {
-              top: -2rem;
-              left: -2rem;
-            }
           }
         }
       }
@@ -139,42 +192,67 @@ $circle-2: 64rem;
         max-width: 80rem;
         width: 100%;
         margin: 0 auto;
-        padding-left: 5rem;
-        padding-right: 2rem;
         margin-top: 3.2rem;
+        padding: 0 1.5rem;
         &__quote-message {
           position: relative;
           .message {
-            border-radius: 2.4rem;
-            margin-bottom: 12rem;
-            width: 43rem;
+            border-radius: 1.6rem;
+            margin-bottom: 8.5rem;
+            max-width: 19.3rem;
+            @include breakpoint(lg) {
+              margin-bottom: 12rem;
+              max-width: 47rem;
+            }
+            &--globy {
+              .avatar {
+                right: 97%;
+              }
+            }
+
             &--customer {
               margin-bottom: 0;
-              width: 47rem;
+              max-width: 18rem;
               position: absolute;
-              right: 0;
-              top: 80%;
+              top: 94%;
+              right: -1.5rem;
+              @include breakpoint(lg) {
+                max-width: 45.4rem;
+
+                right: 0;
+                top: 85%;
+              }
             }
           }
           &:nth-child(2) {
+            margin-bottom: 14rem;
             .message--globy {
-              width: 100%;
-              max-width: 64rem;
+              @include breakpoint(lg) {
+                max-width: 64rem;
+              }
             }
 
             .message--customer {
+              max-width: 23.4rem;
+              @include breakpoint(lg) {
+                max-width: 46.6rem;
+              }
               p {
                 width: 100%;
                 border-radius: 0.8rem;
                 background-color: transparent;
                 padding: 0.6rem 1.2rem;
-                height: 3.6rem;
+                height: 2.2rem;
                 margin-bottom: 0.8rem;
                 border: 0.1rem solid $border-primary;
                 position: relative;
-                @include text($text-secondary, 400, 1.6rem);
+                @include text($text-primary, 400, 1.2rem);
                 @include flex(left, center);
                 opacity: 0.6;
+                @include breakpoint(lg) {
+                  font-size: 1.6rem;
+                  height: 3.6rem;
+                }
                 &::after {
                   content: '';
                   position: absolute;
@@ -187,19 +265,25 @@ $circle-2: 64rem;
                 }
               }
               .alternatives {
-                @include flex(left, center);
-                span {
-                  min-width: 15.4rem;
+                @include flex(left, flex-start);
+                > span {
+                  width: 50%;
                   border-radius: 0.8rem;
-                  padding: 0.6rem 1.2rem;
-                  height: 3.2rem;
-                  @include flex(left, center);
+                  padding: 0.5rem;
+                  text-wrap: pretty;
+                  @include flex(left, flex-start);
                   background-color: $white;
                   box-shadow: 4px 4px 0px 0px #00000040;
-                  @include text($purple, 700, 1.6rem);
+                  @include text($purple, 700, 1rem);
                   border: 0.1rem solid $border-primary;
                   &:nth-child(1) {
                     margin-right: 0.4rem;
+                  }
+                  @include breakpoint(lg) {
+                    text-wrap: nowrap;
+                    font-size: 1.6rem;
+                    padding: 0.6rem 1.2rem;
+                    width: fit-content;
                   }
                 }
               }
@@ -224,6 +308,10 @@ $circle-2: 64rem;
                   display: none;
                 }
               }
+
+              &--customer {
+                top: 85%;
+              }
             }
           }
         }
@@ -233,13 +321,14 @@ $circle-2: 64rem;
         max-width: 80rem;
         width: 100%;
         margin: 0 auto;
+        padding: 3.2rem 0;
         @include flex(center, center, column);
         h6 {
           width: 100%;
           text-align: center;
           font-style: italic;
           margin-bottom: 3.2rem;
-          @include text($text-secondary, 600, 2.4rem);
+          @include text($text-primary, 600, 2.4rem);
         }
       }
     }

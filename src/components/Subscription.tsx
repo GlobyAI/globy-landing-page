@@ -55,7 +55,7 @@ export default function Subscription() {
 
             <Button globyIcon={false}>Get started</Button>
 
-            <ul className="pricing-tiers__options__support-details">
+            <ul className="support-details">
               {option.benefits.map((benefit, index) => (
                 <li key={index} className="support-details__items">
                   {benefit.isSupported ? <Supported /> : <NotSupport />}

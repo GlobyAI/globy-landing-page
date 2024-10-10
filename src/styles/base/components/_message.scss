@@ -1,47 +1,64 @@
 .message {
   width: 100%;
-  border-radius: 999999px;
-  padding: 2.4rem;
+  padding: 1.2rem 1.5rem;
   position: relative;
-  @include flex(space-between, center);
-  background-color: $message-bg-globy;
+  border-radius: 999999px;
+  @include flex(left, center);
+  @include text(null, 400, 1.1rem, 1.3rem);
+
   &__content {
     width: fit-content;
   }
-
   svg {
     margin-left: auto;
+    transform: scale(0.7);
+    @include breakpoint(lg) {
+      transform: scale(1);
+    }
   }
 
   &--globy {
-    @include text($text-primary, 400, 1.6rem);
+    color: $text-secondary;
+    background-color: $message-bg-globy;
   }
   &--customer {
-    @include text($text-secondary, 400, 1.6rem);
+    color: $text-primary;
     background-color: $message-bg-customer;
   }
 
   .bold {
-    font-weight: 600;
+    font-weight: 700;
+  }
+
+  @include breakpoint(lg) {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    padding: 2.4rem;
   }
 }
 
 .avatar {
   position: absolute;
   top: 0;
-  right: 98%;
+  right: 95%;
   z-index: 10;
   border: 0.1rem solid $border-primary;
-  @include box(4rem, 4rem);
+  @include box(2.6rem, 2.6rem);
+  @include breakpoint(lg) {
+    @include box(4rem, 4rem);
+  }
   @include flex(center, center);
   border-radius: 50%;
   box-shadow: $shadow;
   background-color: $gray-100;
   svg > * {
-    fill: $text-primary;
+    fill: $text-secondary;
   }
   &.lg {
     border-width: 0.2rem;
-    @include box(5.6rem, 5.6rem);
+    @include box(3.7rem, 3.7rem);
+    @include breakpoint(lg) {
+      @include box(5.6rem, 5.6rem);
+    }
   }
 }

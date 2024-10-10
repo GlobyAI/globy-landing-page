@@ -10,8 +10,8 @@ export default function Header() {
           <Image
             src="/images/globy logo.png"
             alt="Globy Logo"
-            width={155}
-            height={58}
+            fill
+            sizes="(min-width: 768px) 155px, 58px"
             priority
           />
         </Link>
