@@ -1,17 +1,17 @@
-$circle-2: 145rem;
-$circle-3: 64rem;
 .globy__hero {
   padding: 8rem 0;
   position: relative;
   .circle:nth-child(1) {
-    right: -40%;
+    left: 80%;
     top: -20%;
-    width: 30rem;
+    width: 100%;
+    max-width: 30rem;
     aspect-ratio: 1 / 1;
-    @include breakpoint(lg) {
-      right: -40%;
+    @include breakpoint(md) {
+      width: 80%;
+    }
+    @include breakpoint(md) {
       top: -50%;
-      width: 100%;
       max-width: 110rem;
     }
   }
@@ -19,18 +19,22 @@ $circle-3: 64rem;
   .circle:nth-child(2) {
     left: -50%;
     top: -$header-height;
-    width: 80%;
+    width: 100%;
     aspect-ratio: 1 / 1;
-    @include breakpoint(lg) {
+
+    @include breakpoint(md) {
+      width: 80%;
+    }
+    @include breakpoint(md) {
       left: -60%;
-      width: 145rem;
+      max-width: 145rem;
     }
   }
   .circle:nth-child(3) {
     right: 0%;
     top: 30%;
     width: 30%;
-    @include breakpoint(lg) {
+    @include breakpoint(md) {
       top: 50%;
     }
     aspect-ratio: 1 / 1;
@@ -40,7 +44,7 @@ $circle-3: 64rem;
     margin: 10rem auto;
     width: 100%;
     max-width: 100rem;
-    @include breakpoint(lg) {
+    @include breakpoint(md) {
       margin: 8rem auto;
     }
     @include flex(center, center, column);
@@ -87,7 +91,7 @@ $circle-3: 64rem;
     &__items {
       width: 100%;
       padding: 0;
-      @include breakpoint(lg) {
+      @include breakpoint(md) {
         padding: 0 1.6rem;
       }
       text-align: center;
@@ -104,13 +108,13 @@ $circle-3: 64rem;
           font-size: 2.4rem;
         }
         margin-bottom: 1.6rem;
-        @include breakpoint(lg) {
+        @include breakpoint(md) {
         }
       }
 
       &__content {
         padding: 0;
-        @include breakpoint(lg) {
+        @include breakpoint(md) {
           padding: 0.8rem;
         }
         text-align: center;

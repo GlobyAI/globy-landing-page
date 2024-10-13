@@ -1,45 +1,61 @@
 'use client'
-import { ChangeEvent, useState } from 'react'
 import Button from './Button'
 import TextField from './TextField'
 import EmailIcon from 'public/icons/email.svg'
+import EmailErrorIcon from 'public/icons/email-error.svg'
 import UserIcon from 'public/icons/user.svg'
+import UserErrorIcon from 'public/icons/user-error.svg'
 import IndustryIcon from 'public/icons/industry.svg'
+import IndustryErrorIcon from 'public/icons/industry-error.svg'
+import useForm from '@/hooks/useForm'
 
 export default function SignUpForm() {
-  const [form, setForm] = useState({
-    fullName: '',
-    email: '',
-    industry: '',
-  })
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setForm({ ...form, [name]: value })
-  }
+  const { values, handleChange, errors, handleSubmit, isSuccess, isLoading } =
+    useForm({
+      initialValues: { email: '', industry: '', full_name: '' },
+    })
+
   return (
     <form className="sign-up__form">
-      <TextField
-        label="Full name"
-        icon={<UserIcon />}
-        name="fullName"
-        value={form.fullName}
-        onChange={handleChange}
-      />
-      <TextField
-        label="Email"
-        icon={<EmailIcon />}
-        name="email"
-        value={form.email}
-        onChange={handleChange}
-      />
-      <TextField
-        label="Industry"
-        icon={<IndustryIcon />}
-        name="industry"
-        value={form.industry}
-        onChange={handleChange}
-      />
-      <Button type="button">Join the waiting list</Button>
+      {isSuccess ? (
+        <p className="sign-up__form__message">You successfully signed up!</p>
+      ) : (
+        <>
+          <TextField
+            label="Full name"
+            icon={errors.full_name ? <UserErrorIcon /> : <UserIcon />}
+            name="full_name"
+            value={values.full_name}
+            onChange={handleChange}
+            type="text"
+            error={Boolean(errors.full_name)}
+            helperText={errors.full_name}
+          />
+          <TextField
+            label="Email"
+            icon={errors.email ? <EmailErrorIcon /> : <EmailIcon />}
+            name="email"
+            value={values.email}
+            onChange={handleChange}
+            type="email"
+            error={Boolean(errors.email)}
+            helperText={errors.email}
+          />
+          <TextField
+            type="text"
+            label="Industry"
+            icon={errors.industry ? <IndustryErrorIcon /> : <IndustryIcon />}
+            name="industry"
+            value={values.industry}
+            error={Boolean(errors.industry)}
+            helperText={errors.industry}
+            onChange={handleChange}
+          />
+          <Button type="button" onClick={handleSubmit} disabled={isLoading}>
+            Join the waiting list
+          </Button>
+        </>
+      )}
     </form>
   )
 }

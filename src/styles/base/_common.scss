@@ -5,7 +5,7 @@
   width: 100%;
   font-style: italic;
   margin-bottom: 6.5rem;
-  @include breakpoint(lg) {
+  @include breakpoint(md) {
     margin-bottom: 4.8rem;
     max-width: 78rem;
     font-size: 8rem;

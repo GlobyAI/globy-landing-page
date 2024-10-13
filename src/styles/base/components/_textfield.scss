@@ -13,7 +13,7 @@
       left: 1.6rem;
       top: 1.6rem;
       z-index: 1;
-      svg > * {
+      svg {
         fill-opacity: 1;
       }
     }
@@ -25,7 +25,7 @@
       border: 0.2rem solid;
       height: 5.6rem;
       display: block;
-      padding: 2.2rem 1.6rem 1.8rem;
+      padding: 2.6rem 1.6rem 1.6rem;
       padding-left: 5.6rem;
       @include text($text-secondary, 500, 1.6rem);
       border-color: transparent;
@@ -35,7 +35,6 @@
         border-color: $input-border-active;
         ~ .textfield__label {
           top: 5%;
-          transform: translateY(0);
           transform: scale(0.75);
           p {
             color: $input-label-active;
@@ -48,17 +47,20 @@
       pointer-events: none;
       position: absolute;
       padding: 0 0.2rem;
-      top: 50%;
-      transform: translateY(-50%) scale(1);
+      top: 25%;
+      @include breakpoint(md) {
+        top: 20%;
+      }
       left: 5.6rem;
       transform-origin: top left;
-      transition: all 0.2s ease-out;
+      transition: top 0.2s ease-out;
+      transform: scale(1);
       p {
         height: 100%;
         width: 100%;
         @include flex(left, center);
         @include text($input-label, 400, 1.6rem);
-        @include breakpoint(lg) {
+        @include breakpoint(md) {
           font-size: 2rem;
         }
       }
@@ -66,11 +68,6 @@
   }
   &.error {
     .textfield__container {
-      .textfield__icons {
-        svg > * {
-          fill: $input-label-error !important;
-        }
-      }
       input {
         background-color: $input-bg-error !important;
         border-color: $input-border-error !important;
@@ -108,7 +105,7 @@
     @include flex(left, center);
     @include text($input-error-message, 400, 1.4rem);
     svg {
-      margin-right: 0.2rem;
+      margin-right: 0.4rem;
       width: 1.1rem;
       height: 1.1rem;
       > * {

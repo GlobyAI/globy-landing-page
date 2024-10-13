@@ -6,67 +6,7 @@
   background-color: $app-bg;
   position: relative;
 
-  &__header {
-    z-index: 100;
-    &__navbar {
-      padding: 3.5rem;
-      @include box(100%, 8.6rem);
-      @include flex(left, center);
-      @include breakpoint(md) {
-        height: $header-height;
-        justify-content: center;
-        padding: 0;
-      }
-      > a {
-        position: relative;
-        @include box(7rem, 2.8rem);
-        @include breakpoint(md) {
-          @include box(15.6rem, 5.8rem);
-        }
-      }
-    }
-  }
   &__main {
     padding: 0 4.5rem;
-  }
-
-  &__footer {
-    position: relative;
-    min-height: 88rem;
-    overflow: hidden;
-    @include flex(center, center, column);
-    .circle {
-      width: 200%;
-      aspect-ratio: 1 / 1;
-      top: 12%;
-      right: -50%;
-    }
-
-    .footer {
-      flex: 1;
-      padding: 8rem 0;
-      @include flex(center, center, column);
-      &__social-media {
-        width: 21rem;
-        margin-bottom: 5.1rem;
-        @include flex(space-between, center);
-        &__items {
-          svg {
-            width: 2.4rem;
-            height: 2.4rem;
-          }
-        }
-      }
-
-      &__copyright {
-        @include text($copyright, 600, 1.6rem);
-        font-style: italic;
-        @include flex(center, center);
-        span {
-          font-size: 2rem;
-          margin-right: 0.2rem;
-        }
-      }
-    }
   }
 }
