@@ -1,4 +1,4 @@
-import { ISignUpFormData } from '../services/services'
+import { ISignUpFormData } from '../services'
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export type ErrorValidation = {

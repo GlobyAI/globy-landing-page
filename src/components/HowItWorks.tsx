@@ -4,6 +4,7 @@ import Message from './Message'
 import ChatHistory from './ChatHistory'
 import Button from './Button'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function HowItWorks() {
   return (
@@ -12,9 +13,15 @@ export default function HowItWorks() {
       <div className="circle"></div>
       <h2 className="heading">How it works</h2>
       <div className="globy__how-it-works__chat-history">
-        <div className="bg-grid"></div>
-        <div className="bg-screen"></div>
         <div className="conversation">
+          <div className="conversation__screen-bg">
+            <Image
+              src="/images/how-it-works-screen.png"
+              alt="chat-history-screen"
+              fill
+              sizes="(min-width: 768px) 1100px 900px"
+            />
+          </div>
           <div className="question">
             <div className="question__globy">
               <div className="question__globy__heading">
@@ -58,7 +65,7 @@ export default function HowItWorks() {
               modern and completely unique websites. <br />
               You get easy help to edit the website without any prior knowledge.
             </h6>
-            <Link href="#sign-up">
+            <Link href="#join">
               <Button>Sign up now</Button>
             </Link>
           </div>

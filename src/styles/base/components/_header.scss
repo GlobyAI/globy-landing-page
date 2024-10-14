@@ -1,5 +1,6 @@
 .globy__header {
   z-index: 100;
+  position: relative;
   &__navbar {
     padding: 3.5rem;
     @include box(100%, 8.6rem);

@@ -6,6 +6,7 @@ import NotSupport from 'public/icons/not-support.svg'
 import Supported from 'public/icons/support.svg'
 import Button from './Button'
 import { pricingOptions } from '@/helpers/variables'
+import Link from 'next/link'
 
 export default function Subscription() {
   const [selectedPlan, setSelectedPlan] = React.useState('annually')
@@ -53,7 +54,9 @@ export default function Subscription() {
               <p className="option-detail__description">{option.description}</p>
             </div>
 
-            <Button globyIcon={false}>Get started</Button>
+            <Link href="#join">
+              <Button globyIcon={false}>Get started</Button>
+            </Link>
 
             <ul className="support-details">
               {option.benefits.map((benefit, index) => (

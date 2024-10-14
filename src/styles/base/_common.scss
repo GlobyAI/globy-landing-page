@@ -1,12 +1,13 @@
 .heading {
   margin: 0 auto;
   text-align: center;
+  height: auto;
   @include text($text-primary, 800, 4rem, 4.8rem);
   width: 100%;
+  display: block;
   font-style: italic;
-  margin-bottom: 6.5rem;
   @include breakpoint(md) {
-    margin-bottom: 4.8rem;
+    padding-bottom: 4.8rem;
     max-width: 78rem;
     font-size: 8rem;
     line-height: 7.7rem;
@@ -17,6 +18,7 @@
   &::after {
     content: '';
     width: 71rem;
+    max-width: 75%;
     height: 0.1rem;
     border-bottom: 0.1rem solid $divider;
     position: absolute;

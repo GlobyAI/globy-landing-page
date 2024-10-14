@@ -1,13 +1,14 @@
 button {
-  min-width: 13.4rem;
-  height: 4.8rem;
-  @include breakpoint(md) {
-    height: 5.6rem;
-  }
+  min-width: 11.6rem;
+  height: 4.2rem;
   border-radius: 999999px;
   border: 0.2rem solid;
   border-color: transparent;
-  @include text($btn-text, 600, 1.6rem);
+  @include text($btn-text, 600, 1.2rem);
+  @include breakpoint(md) {
+    font-size: 1.6rem;
+    height: 5.6rem;
+  }
   @include flex(center, center);
   cursor: pointer;
   background-color: $btn-bg;

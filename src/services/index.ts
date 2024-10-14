@@ -4,7 +4,7 @@ export interface ISignUpFormData {
   full_name: string
 }
 
-const API_URL = 'https://globy.ai/signup'
+const API_URL = process.env.API_URL || ''
 
 export const signUp = async (formData: ISignUpFormData) => {
   const res = await fetch(API_URL, {
@@ -14,6 +14,5 @@ export const signUp = async (formData: ISignUpFormData) => {
     },
     body: JSON.stringify(formData),
   })
-
   return await res.json()
 }

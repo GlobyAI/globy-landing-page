@@ -40,3 +40,10 @@ textarea {
 label {
   display: block;
 }
+
+svg {
+  transform: scale(0.7);
+  @include breakpoint(md) {
+    transform: scale(1);
+  }
+}

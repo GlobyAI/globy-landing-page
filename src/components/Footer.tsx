@@ -3,12 +3,12 @@ import Link from 'next/link'
 import TwitterIcon from 'public/icons/x-twitter-brands.svg'
 import InstagramIcon from 'public/icons/instagram-brands.svg'
 import LinkedInIcon from 'public/icons/linkedin-brands.svg'
-import SignUp from './SignUp'
+import Join from './Join'
 export default function Footer() {
   return (
     <footer className="globy__footer">
       <div className="circle"></div>
-      <SignUp />
+      <Join />
       <div className="footer">
         <ul className="footer__social-media">
           <li className="footer__social-media__items">
