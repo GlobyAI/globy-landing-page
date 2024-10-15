@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  z-index: 10;
+  z-index: 1;
 }
 html {
   font-size: 10px;
@@ -43,7 +43,7 @@ label {
 
 svg {
   transform: scale(0.7);
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     transform: scale(1);
   }
 }

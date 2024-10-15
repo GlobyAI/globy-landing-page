@@ -2,8 +2,8 @@ import Message from './Message'
 
 export default function ChatHistory() {
   return (
-    <ul className="chat-history">
-      <li className="chat-history__quote-message">
+    <ul className="chat__history">
+      <li className="chat__history__quote-message">
         <Message>
           Congratulations with starting your own business! 🎉{' '}
           <span className="bold"> What business should you start?</span>
@@ -13,7 +13,7 @@ export default function ChatHistory() {
           message="I want to create a hair salon that focuses on various beauty products."
         />
       </li>
-      <li className="chat-history__quote-message">
+      <li className="chat__history__quote-message">
         <Message>
           Hair salon is a great business! We’ve analysed thousands of webpages
           in this domain and ready to provide you with best practice. Let’s
@@ -28,7 +28,7 @@ export default function ChatHistory() {
           </div>
         </Message>
       </li>
-      <li className="chat-history__quote-message">
+      <li className="chat__history__quote-message">
         <Message />
         <Message isCustomer />
       </li>

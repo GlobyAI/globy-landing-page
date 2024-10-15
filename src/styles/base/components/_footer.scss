@@ -1,6 +1,7 @@
 .globy__footer {
   position: relative;
   overflow: hidden;
+  z-index: 1;
   @include flex(center, center, column);
   .circle {
     width: 200%;
@@ -10,15 +11,16 @@
   }
 
   .footer {
+    position: relative;
     flex: 1;
     padding: 3.8rem 0;
-    @include flex(center, center, column);
+    @include flex(center, center, column, 5.1rem);
     @include breakpoint(lg) {
       padding: 8rem 0;
+      z-index: 0;
     }
     &__social-media {
       width: 21rem;
-      margin-bottom: 5.1rem;
       @include flex(space-between, center);
       &__items {
         svg {

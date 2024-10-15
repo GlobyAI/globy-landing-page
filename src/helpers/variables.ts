@@ -78,3 +78,28 @@ export const pricingOptions = [
     ],
   },
 ]
+
+export const industries = [
+  { label: 'Ha', value: 'Ha' },
+  { label: 'Consultancy', value: 'Consultancy' },
+  { label: 'Construction', value: 'Construction' },
+  { label: 'Events', value: 'Events' },
+  { label: 'Education', value: 'Education' },
+  { label: 'Marketing', value: 'Marketing' },
+  { label: 'Art', value: 'Art' },
+  { label: 'Restaurants', value: 'Restaurants' },
+  { label: 'Manufacturing industry', value: 'Manufacturing industry' },
+  { label: 'Traveling', value: 'Traveling' },
+  { label: 'Real estate brokers', value: 'Real estate brokers' },
+  { label: 'Food', value: 'Food' },
+  { label: 'It consultancy', value: 'It consultancy' },
+  { label: 'Beauty', value: 'Beauty' },
+  { label: 'Music', value: 'Music' },
+  { label: 'Sport', value: 'Sport' },
+  { label: 'Fashion', value: 'Fashion' },
+  { label: 'Healthcare', value: 'Healthcare' },
+  { label: 'Finance', value: 'Finance' },
+  { label: 'Law', value: 'Law' },
+  { label: 'Design', value: 'Design' },
+  { label: 'Other', value: 'Other' },
+]

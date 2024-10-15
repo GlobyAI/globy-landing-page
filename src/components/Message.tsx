@@ -32,7 +32,7 @@ export default function Message({
         )}
       </figure>
 
-      <div className="message__content">{children ? children : message}</div>
+      <span className="message__content">{children ? children : message}</span>
       {icon && icon}
     </div>
   )

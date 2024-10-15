@@ -1,20 +1,19 @@
 .heading {
   margin: 0 auto;
   text-align: center;
-  height: auto;
+  max-width: 74rem;
   @include text($text-primary, 800, 4rem, 4.8rem);
   width: 100%;
   display: block;
   font-style: italic;
-  @include breakpoint(md) {
-    padding-bottom: 4.8rem;
-    max-width: 78rem;
+  @include breakpoint(lg) {
     font-size: 8rem;
-    line-height: 7.7rem;
+    line-height: 7.8rem;
   }
 }
 
 .divider {
+  position: relative;
   &::after {
     content: '';
     width: 71rem;
@@ -25,7 +24,7 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
+    z-index: 0;
   }
 }
 

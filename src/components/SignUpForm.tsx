@@ -5,9 +5,9 @@ import EmailIcon from 'public/icons/email.svg'
 import EmailErrorIcon from 'public/icons/email-error.svg'
 import UserIcon from 'public/icons/user.svg'
 import UserErrorIcon from 'public/icons/user-error.svg'
-import IndustryIcon from 'public/icons/industry.svg'
-import IndustryErrorIcon from 'public/icons/industry-error.svg'
 import useForm from '@/hooks/useForm'
+import { industries } from '@/helpers/variables'
+import SelectBox from './SelectBox'
 
 export default function SignUpForm() {
   const {
@@ -29,6 +29,7 @@ export default function SignUpForm() {
       </div>
     )
   }
+
   return (
     <form className="sign-up-form">
       {msg && <p className="sign-up-form__error-message">{msg}</p>}
@@ -38,7 +39,7 @@ export default function SignUpForm() {
         icon={errors.full_name ? <UserErrorIcon /> : <UserIcon />}
         name="full_name"
         value={values.full_name}
-        onChange={handleChange}
+        onChange={(e) => handleChange('full_name', e.target.value)}
         type="text"
         error={Boolean(errors.full_name)}
         helperText={errors.full_name}
@@ -49,22 +50,20 @@ export default function SignUpForm() {
         icon={errors.email ? <EmailErrorIcon /> : <EmailIcon />}
         name="email"
         value={values.email}
-        onChange={handleChange}
+        onChange={(e) => handleChange('email', e.target.value)}
         type="email"
         error={Boolean(errors.email)}
         helperText={errors.email}
       />
-      <TextField
-        type="text"
-        id="industry"
-        label="Industry"
-        icon={errors.industry ? <IndustryErrorIcon /> : <IndustryIcon />}
-        name="industry"
+
+      <SelectBox
+        options={industries}
         value={values.industry}
+        onSelect={handleChange}
         error={Boolean(errors.industry)}
-        helperText={errors.industry}
-        onChange={handleChange}
+        message={errors.industry}
       />
+
       <Button type="button" onClick={handleSubmit} disabled={isPending}>
         Join the waiting list
       </Button>

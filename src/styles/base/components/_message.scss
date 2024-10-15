@@ -5,14 +5,10 @@
   border-radius: 999999px;
   @include flex(left, center);
   @include text(null, 400, 1.1rem, 1.3rem);
-
-  &__content {
-    width: fit-content;
-  }
   svg {
     margin-left: auto;
     transform: scale(0.7);
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
       transform: scale(1);
     }
   }
@@ -30,9 +26,9 @@
     font-weight: 700;
   }
 
-  @include breakpoint(md) {
-    font-size: 1.8rem;
-    line-height: 1.8rem;
+  @include breakpoint(lg) {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
     padding: 2.4rem;
   }
 }
@@ -44,7 +40,7 @@
   z-index: 10;
   border: 0.1rem solid $border-primary;
   @include box(2.6rem, 2.6rem);
-  @include breakpoint(md) {
+  @include breakpoint(lg) {
     @include box(4rem, 4rem);
   }
   @include flex(center, center);
@@ -57,7 +53,7 @@
   &.lg {
     border-width: 0.2rem;
     @include box(3.7rem, 3.7rem);
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
       @include box(5.6rem, 5.6rem);
     }
   }

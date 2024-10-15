@@ -1,21 +1,20 @@
 .globy__how-it-works {
-  padding: 8rem 0 8rem;
-  @include breakpoint(lg) {
-    padding: 8rem 0;
-  }
+  padding: 8rem 0;
   margin: 0 auto;
   position: relative;
-  max-width: 150rem;
-
-  .heading {
-    padding-bottom: 4.8rem;
+  max-width: 136rem;
+  @include flex(center, center, column, 4rem);
+  &.divider {
+    &::after {
+      z-index: 10;
+    }
   }
   .circle:nth-child(1) {
     left: 70%;
     top: 5%;
     width: 100%;
     aspect-ratio: 1 / 1;
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
       max-width: 105rem;
     }
   }
@@ -31,32 +30,39 @@
   }
 
   &__chat-history {
-    margin-top: 22rem;
     position: relative;
-    width: 100%;
-    min-height: 90rem;
-    background-image: url('../../../../public/images/how-it-works-grid.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top center;
-    z-index: 10;
+    z-index: 1;
+    @include flex(null, center, column, -56rem);
+    align-self: stretch;
     @include breakpoint(lg) {
       margin-top: 34rem;
     }
+    .how-to-work__bg {
+      position: absolute;
+      left: 50%;
+      bottom: 8.2px;
+      transform: translateX(-50%);
+      background-image: url('../../../../public/images/how-it-works-grid.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top center;
+      width: 136rem;
+      height: 90rem;
+    }
     .conversation {
       width: 100%;
+      position: relative;
+      height: 79rem;
       &__screen-bg {
         display: block;
         width: 100%;
         position: absolute;
+        bottom: -10%;
         left: 50%;
-        top: 1rem;
-        max-width: 35rem;
         transform: translateX(-50%);
         z-index: 10;
         height: 60rem;
         @include breakpoint(lg) {
-          top: 10rem;
           height: 90rem;
           max-width: 110rem;
         }
@@ -78,278 +84,263 @@
           }
         }
       }
-      .question {
-        margin: 0 auto;
-        background-color: $white;
-        border-radius: 2.4rem;
-        box-shadow: $shadow;
-        width: 100%;
-        padding: 1.2rem 0;
-        max-width: 30rem;
+      .chat {
         position: absolute;
-        top: -22rem;
+        top: -50rem;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 100;
-        @include breakpoint(lg) {
-          max-width: 80rem;
-          padding: 4rem 0;
-          top: -32rem;
-        }
-
-        &__globy {
-          position: relative;
-          margin-bottom: 2.5rem;
-          padding: 0 2.6rem 0 1.2rem;
-          @include breakpoint(md) {
-            margin-bottom: 3.2rem;
-            padding: 0 2.6rem;
+        z-index: 10;
+        max-width: 72rem;
+        @include flex(center, flex-start, column, 3.2rem);
+        padding: 4rem 0;
+        &__question {
+          margin: 0 auto;
+          background-color: $white;
+          border-radius: 2.4rem;
+          box-shadow: $shadow;
+          width: 100%;
+          padding: 1.2rem 0;
+          @include flex(null, flex-start, column);
+          @include breakpoint(lg) {
+            padding: 4.4rem 4rem;
+            gap: 3.2rem;
           }
-          position: relative;
-          &__heading {
-            .avatar {
-              position: relative;
-              margin-right: 1rem;
-              top: unset;
-              right: unset;
-            }
-            padding-bottom: 2.5rem;
-            @include breakpoint(md) {
-              margin-bottom: 3.2rem;
-              padding: 0;
-            }
-            @include flex(space-between, center);
-            > p {
-              flex: 1;
-              @include text($cadet-gray, 500, 1rem);
-              @include breakpoint(md) {
-                font-size: 1.6rem;
-              }
-            }
-            .dot-process-bar {
-              height: 1.2rem;
-              width: 7.4rem;
-              @include flex(space-between, center);
-              @include breakpoint(md) {
-                width: 18rem;
-              }
-              .dot-process-bar__dots {
-                @include box(0.4rem, 0.4rem);
-                border-radius: 50%;
-                border: 1px solid $purple;
-                &.done {
-                  background-color: $purple;
-                }
 
-                &.current {
-                  @include box(0.8rem, 0.8rem);
-                  @include breakpoint(md) {
-                    @include box(1.2rem, 1.2rem);
+          &__globy {
+            position: relative;
+            padding: 0 2.6rem 0 1.2rem;
+            @include breakpoint(lg) {
+              padding: 0 2.6rem;
+            }
+            .avatar {
+              margin-right: 1rem;
+              top: -10%;
+            }
+            &__heading {
+              @include breakpoint(lg) {
+                padding: 0;
+              }
+              @include flex(space-between, center);
+              > p {
+                flex: 1;
+                @include text($cadet-gray, 500, 1rem);
+                @include breakpoint(lg) {
+                  font-size: 1.6rem;
+                }
+              }
+              .dot-process-bar {
+                height: 1.2rem;
+                width: 7.4rem;
+                @include flex(space-between, center);
+                @include breakpoint(lg) {
+                  width: 18rem;
+                }
+                .dot-process-bar__dots {
+                  @include box(0.4rem, 0.4rem);
+                  border-radius: 50%;
+                  border: 1px solid $purple;
+                  &.done {
+                    background-color: $purple;
+                  }
+
+                  &.current {
+                    @include box(0.8rem, 0.8rem);
+                    @include breakpoint(lg) {
+                      @include box(1.2rem, 1.2rem);
+                    }
+                  }
+
+                  @include breakpoint(lg) {
+                    @include box(0.8rem, 0.8rem);
+                    @include box(0.8rem, 0.8rem);
                   }
                 }
-
-                @include breakpoint(md) {
-                  @include box(0.8rem, 0.8rem);
-                  @include box(0.8rem, 0.8rem);
-                }
               }
             }
-          }
-          &__greeting {
-            font-size: 1.4rem;
-            line-height: 2rem;
-            font-weight: 700;
-            font-style: italic;
-            padding-left: 1rem;
-            word-break: break-all;
-            @include breakpoint(md) {
-              line-height: 4rem;
-              padding: 0 1rem;
-              font-size: 3.8rem !important;
-            }
-          }
-        }
-
-        &__customer {
-          position: relative;
-          padding: 0 1.25rem;
-          @include breakpoint(md) {
-            padding: 0 4rem;
-          }
-          & .message {
-            .avatar {
-              top: -2rem;
-              left: 0rem;
-              @include breakpoint(md) {
-                left: -2rem;
-              }
-            }
-            svg {
-              transform: scale(1);
-            }
-            height: 5.6rem;
-            padding-left: 4.2rem !important;
-
-            &__content {
-              position: relative;
+            &__greeting {
+              font-size: 1.4rem;
+              line-height: 2rem;
+              font-weight: 700;
+              font-style: italic;
+              padding-left: 1rem;
               word-break: break-all;
-              flex: 1;
-              margin-right: 2rem;
-              @include flex(left, center);
-              @include breakpoint(md) {
-                margin-right: 0.8rem;
-              }
-
-              &::after {
-                content: '';
-                position: absolute;
-                right: -2%;
-                width: 0.1rem;
-                height: 90%;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: $white;
+              @include breakpoint(lg) {
+                line-height: 4rem;
+                padding: 0 1rem;
+                font-size: 3.8rem !important;
               }
             }
           }
-        }
-      }
-      .chat-history {
-        max-width: 30rem;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0 1.6rem;
-        @include breakpoint(md) {
-          max-width: 80rem;
-          padding: 3.2rem;
-        }
-        &__quote-message {
-          position: relative;
-          .message {
-            border-radius: 1.6rem;
-            margin-bottom: 8.5rem;
-            max-width: 19.3rem;
-            @include breakpoint(md) {
-              margin-bottom: 12rem;
-              max-width: 47rem;
-            }
-            svg {
-              margin: unset;
-            }
-            .avatar {
-              right: 97%;
-            }
-            &--globy {
+
+          &__customer {
+            position: relative;
+            width: 100%;
+            & .message {
               .avatar {
-                right: 98%;
-              }
-            }
-
-            &--customer {
-              margin-bottom: 0;
-              max-width: 18rem;
-              position: absolute;
-              top: 94%;
-              right: -1.5rem;
-              @include breakpoint(md) {
-                max-width: 45.4rem;
-
-                right: 0;
-                top: 85%;
-              }
-            }
-          }
-          &:nth-child(2) {
-            margin-bottom: 12rem;
-            @include breakpoint(md) {
-              margin-bottom: 14rem;
-            }
-            .message--globy {
-              @include breakpoint(md) {
-                max-width: 64rem;
-              }
-            }
-
-            .message--customer {
-              max-width: 23.4rem;
-              @include breakpoint(md) {
-                max-width: 46.6rem;
-              }
-              p {
-                width: 100%;
-                border-radius: 0.8rem;
-                background-color: transparent;
-                padding: 0.6rem 1.2rem;
-                height: 2.2rem;
-                margin-bottom: 0.8rem;
-                border: 0.1rem solid $border-primary;
-                position: relative;
-                @include text($text-primary, 400, 1.2rem);
-                @include flex(left, center);
-                opacity: 0.6;
-                @include breakpoint(md) {
-                  font-size: 1.6rem;
-                  height: 3.6rem;
+                top: -2rem;
+                left: 0rem;
+                @include breakpoint(lg) {
+                  left: -2rem;
                 }
+              }
+              svg {
+                transform: scale(1.5);
+              }
+              height: 5.6rem;
+              padding-left: 4.2rem !important;
+              padding: 1.6rem;
+              &__content {
+                position: relative;
+                word-break: break-all;
+                @include flex(space-between, center);
                 &::after {
                   content: '';
                   position: absolute;
-                  left: 0.8rem;
+                  right: -0.4rem;
                   width: 0.1rem;
-                  height: 70%;
+                  height: 2.7rem;
                   top: 50%;
                   transform: translateY(-50%);
                   background-color: $white;
                 }
               }
-              .alternatives {
-                @include flex(left, flex-start);
-                > span {
-                  width: fit-content;
-                  border-radius: 0.8rem;
-                  padding: 0.5rem;
-                  text-wrap: pretty;
-                  height: 4.4rem;
-                  @include flex(center, flex-start);
-                  background-color: $white;
-                  box-shadow: 4px 4px 0px 0px #00000040;
-                  @include text($purple, 700, 1rem);
-                  border: 0.1rem solid $border-primary;
-                  &:nth-child(1) {
-                    margin-right: 0.4rem;
-                  }
-                  @include breakpoint(md) {
-                    text-wrap: nowrap;
-                    font-size: 1.6rem;
-                    padding: 0.6rem 1.2rem;
-                    width: fit-content;
-                  }
-                }
-              }
             }
           }
-          &:nth-child(3) {
+        }
+        &__history {
+          max-width: 30rem;
+          width: 100%;
+          margin: 0 auto;
+          padding: 0 1.6rem;
+          position: relative;
+          @include flex(center, center, column, 10rem);
+          @include breakpoint(lg) {
+            max-width: 80rem;
+            padding: 3.2rem;
+          }
+          &__quote-message {
+            position: relative;
+            width: 100%;
+            padding: 0 2rem;
             .message {
-              height: 8.6rem;
-              background: transparent;
-              &:nth-child(2) {
-                .avatar {
-                  display: none;
-                }
+              border-radius: 1.6rem;
+              max-width: 19.3rem;
+              @include breakpoint(lg) {
+                max-width: 47rem;
               }
-              border: 0.2rem solid $border-primary;
+              svg {
+                margin: unset;
+              }
               .avatar {
-                background: transparent;
-                right: 102%;
-                border: 0.2rem solid $border-primary;
-                img,
-                svg {
-                  display: none;
+                right: 97%;
+              }
+              &--globy {
+                gap: -10px;
+                .avatar {
+                  right: 98%;
                 }
               }
 
               &--customer {
-                top: 85%;
+                position: absolute;
+                right: 0;
+                max-width: 18rem;
+                margin-left: auto;
+                @include breakpoint(lg) {
+                  max-width: 45.4rem;
+                  top: 85%;
+                }
+              }
+            }
+            &:nth-child(2) {
+              margin-bottom: 5rem;
+              .message--globy {
+                @include breakpoint(lg) {
+                  max-width: 64rem;
+                }
+              }
+
+              .message--customer {
+                max-width: 23.4rem;
+                @include breakpoint(lg) {
+                  max-width: 46.6rem;
+                }
+                p {
+                  width: 100%;
+                  border-radius: 0.8rem;
+                  background-color: transparent;
+                  padding: 0.6rem 1.2rem;
+                  height: 2.2rem;
+                  margin-bottom: 0.8rem;
+                  border: 0.1rem solid $border-primary;
+                  position: relative;
+                  @include text($text-primary, 400, 1.2rem);
+                  @include flex(left, center);
+                  opacity: 0.6;
+                  @include breakpoint(lg) {
+                    font-size: 1.6rem;
+                    height: 3.6rem;
+                  }
+                  &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0.8rem;
+                    width: 0.1rem;
+                    height: 70%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-color: $white;
+                  }
+                }
+                .alternatives {
+                  @include flex(left, flex-start);
+                  > span {
+                    width: fit-content;
+                    border-radius: 0.8rem;
+                    padding: 0.5rem;
+                    text-wrap: pretty;
+                    height: 4.4rem;
+                    @include flex(center, flex-start);
+                    background-color: $white;
+                    box-shadow: 4px 4px 0px 0px #00000040;
+                    @include text($purple, 700, 1rem);
+                    border: 0.1rem solid $border-primary;
+                    &:nth-child(1) {
+                      margin-right: 0.4rem;
+                    }
+                    @include breakpoint(lg) {
+                      text-wrap: nowrap;
+                      font-size: 1.6rem;
+                      padding: 0.6rem 1.2rem;
+                      width: fit-content;
+                    }
+                  }
+                }
+              }
+            }
+            &:nth-child(3) {
+              .message {
+                height: 8.6rem;
+                background: transparent;
+                &:nth-child(2) {
+                  .avatar {
+                    display: none;
+                  }
+                }
+                border: 0.2rem solid $border-primary;
+                .avatar {
+                  background: transparent;
+                  right: 102%;
+                  border: 0.2rem solid $border-primary;
+                  img,
+                  svg {
+                    display: none;
+                  }
+                }
+
+                &--customer {
+                  top: 85%;
+                }
               }
             }
           }
@@ -361,15 +352,17 @@
         width: 100%;
         margin: 0 auto;
         padding: 3.2rem 0 0;
+        position: relative;
+        z-index: 10;
         @include flex(center, center, column);
-        h6 {
+        &__content {
           width: 100%;
           text-align: center;
           font-style: italic;
           margin-bottom: 3.2rem;
           max-width: 32rem;
           @include text($text-primary, 600, 1.3rem);
-          @include breakpoint(md) {
+          @include breakpoint(lg) {
             font-size: 2.4rem;
             max-width: unset;
           }

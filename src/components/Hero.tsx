@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="circle"></div>
       <div className="circle"></div>
       <div className="intro">
-        <h1 className="intro__heading">
+        <h1 className="heading">
           Build unique websites faster{' '}
           <span className="lightning-bolt"> &#9889;</span>
           with chat

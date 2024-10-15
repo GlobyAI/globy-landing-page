@@ -12,11 +12,11 @@ export default function useForm({ initialValues }: Props) {
   const [isSuccess, setIsSuccess] = useState<boolean>(false)
   const [msg, setMsg] = useState<string>('')
   const [isPending, startTransition] = useTransition()
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (name: string, value: string) => {
     if (isSuccess) {
       setIsSuccess(false)
     }
-    const { name, value } = e.target
+
     if (errors[name]) {
       setErrors({ ...errors, [name]: '' })
     }

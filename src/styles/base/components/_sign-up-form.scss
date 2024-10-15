@@ -1,0 +1,26 @@
+.sign-up-form {
+  width: 100%;
+  @include flex(center, center, column, 0.8rem);
+  &__error-message {
+    @include text($text-error, 400, 1.2rem);
+    @include breakpoint(lg) {
+      font-size: 1.6rem;
+    }
+    margin-bottom: 2.4rem;
+    text-align: center;
+  }
+  &__message {
+    @include text($text-primary, 600, 1.6rem);
+    @include breakpoint(lg) {
+      font-size: 2rem;
+    }
+    margin-bottom: 2.4rem;
+    text-align: center;
+  }
+
+  button {
+    margin-top: 2.4rem;
+    width: 100%;
+    z-index: 0;
+  }
+}
