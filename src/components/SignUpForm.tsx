@@ -33,6 +33,7 @@ export default function SignUpForm() {
     <form className="sign-up-form">
       {msg && <p className="sign-up-form__error-message">{msg}</p>}
       <TextField
+        id="full_name"
         label="Full name"
         icon={errors.full_name ? <UserErrorIcon /> : <UserIcon />}
         name="full_name"
@@ -43,6 +44,7 @@ export default function SignUpForm() {
         helperText={errors.full_name}
       />
       <TextField
+        id="email"
         label="Email"
         icon={errors.email ? <EmailErrorIcon /> : <EmailIcon />}
         name="email"
@@ -54,6 +56,7 @@ export default function SignUpForm() {
       />
       <TextField
         type="text"
+        id="industry"
         label="Industry"
         icon={errors.industry ? <IndustryErrorIcon /> : <IndustryIcon />}
         name="industry"

@@ -44,9 +44,9 @@ export default function Subscription() {
               </div>
             )}
             <div className="option-detail">
-              <h5 className="option-detail__name">
+              <strong className="option-detail__name">
                 <em>{option.name}</em>
-              </h5>
+              </strong>
               <p className="option-detail__price">
                 {option.price} <span>/month</span>
               </p>

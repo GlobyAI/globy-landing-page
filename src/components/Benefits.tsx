@@ -9,7 +9,9 @@ export default function Benefits() {
       <div className="benefits">
         <article className="benefits__items">
           <AppWindowICon />
-          <h5 className="benefits__items__title">Industry Best Practices</h5>
+          <strong className="benefits__items__title">
+            Industry Best Practices
+          </strong>
           <p className="benefits__items__content">
             Benefit from time-tested standards and practices, built right into
             your website design.
@@ -18,7 +20,9 @@ export default function Benefits() {
         <article className="benefits__items">
           <MessageCircleHeartIcon />
 
-          <h5 className="benefits__items__title">Tailored Uniqueness</h5>
+          <strong className="benefits__items__title">
+            Tailored Uniqueness
+          </strong>
           <p className="benefits__items__content">
             We analyze your competitors and create a design that’s truly unique
             to your business.
@@ -26,7 +30,9 @@ export default function Benefits() {
         </article>
         <article className="benefits__items">
           <AlarmClockIcon />
-          <h5 className="benefits__items__title">Lightning-Fast Launch</h5>
+          <strong className="benefits__items__title">
+            Lightning-Fast Launch
+          </strong>
           <p className="benefits__items__content">
             Get your website up and running in just hours, so you can start
             growing your business fast.
@@ -34,7 +40,9 @@ export default function Benefits() {
         </article>
         <article className="benefits__items">
           <EarthIcon />
-          <h5 className="benefits__items__title">Comprehensive Built-In SEO</h5>
+          <strong className="benefits__items__title">
+            Comprehensive Built-In SEO
+          </strong>
           <p className="benefits__items__content">
             Your site is fully optimized for search engines, boosting visibility
             from day one.

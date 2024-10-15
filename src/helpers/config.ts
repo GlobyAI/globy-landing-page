@@ -15,7 +15,6 @@ export const METADATA = {
   SHORT_NAME: 'Globy',
   CATEGORIES: ['Software', 'Web Development'],
 
-  TWITTER_URL: 'https://twitter.com/MY_APP_NAME',
-  INSTAGRAM_URL: 'https://instagram.com/MY_APP_NAME',
-  LINKEDIN_URL: 'https://linkedin.com/MY_APP_NAME',
+  INSTAGRAM_URL: 'https://www.instagram.com/globy.ai',
+  LINKEDIN_URL: 'https://www.linkedin.com/company/globy-ai',
 }

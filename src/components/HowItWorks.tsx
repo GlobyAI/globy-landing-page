@@ -28,7 +28,7 @@ export default function HowItWorks() {
                 <figure className="avatar">
                   <GlobyIcon />
                 </figure>
-                <p>QUESTION 3 OF 10</p>
+                <strong>QUESTION 3 OF 10</strong>
                 <ul className="dot-process-bar">
                   <li className="dot-process-bar__dots done"></li>
                   <li className="dot-process-bar__dots done"></li>
@@ -42,10 +42,10 @@ export default function HowItWorks() {
                   <li className="dot-process-bar__dots"></li>
                 </ul>
               </div>
-              <h4 className="question__globy__greeting">
+              <strong className="question__globy__greeting">
                 Hi, I’m Globy 👋 We’ll begin with some relevant questions,
                 sounds good?
-              </h4>
+              </strong>
             </div>
 
             <div className="question__customer">
@@ -60,11 +60,11 @@ export default function HowItWorks() {
 
           <ChatHistory />
           <div className="presentation">
-            <h6>
+            <p>
               <strong>Globy</strong> creates professional, <br /> relevant,
               modern and completely unique websites. <br />
               You get easy help to edit the website without any prior knowledge.
-            </h6>
+            </p>
             <Link href="#join">
               <Button>Sign up now</Button>
             </Link>

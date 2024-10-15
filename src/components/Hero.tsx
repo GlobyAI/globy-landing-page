@@ -13,10 +13,10 @@ export default function Hero() {
           <span className="lightning-bolt"> &#9889;</span>
           with chat
         </h1>
-        <h5 className="intro__subtitle">
+        <p className="intro__subtitle">
           Join our waiting list and be among the first to get access when we
           launch!
-        </h5>
+        </p>
         <Link href="#join">
           <Button>Join now</Button>
         </Link>
