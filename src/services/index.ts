@@ -4,7 +4,8 @@ export interface ISignUpFormData {
   full_name: string
 }
 
-const API_URL = process.env.API_URL || ''
+const API_URL =
+  'https://gtznj0d9mj.execute-api.eu-west-1.amazonaws.com/Stage/signup'
 
 export const signUp = async (formData: ISignUpFormData) => {
   const res = await fetch(API_URL, {
