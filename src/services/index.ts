@@ -11,6 +11,7 @@ export const signUp = async (formData: ISignUpFormData) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      'x-api-key': process.env.API_KEY || '',
     },
     body: JSON.stringify(formData),
   })
