@@ -19,8 +19,12 @@
   }
 
   button {
-    margin-top: 2.4rem;
+    margin-top: 1.2rem;
     width: 100%;
     z-index: 0;
+
+    @include breakpoint(lg) {
+      margin-top: 2.4rem;
+    }
   }
 }

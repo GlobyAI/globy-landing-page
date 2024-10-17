@@ -6,7 +6,7 @@
     @include flex(center, center, column, 4.8rem);
     .billing-circle {
       border-radius: 10rem;
-      padding: 0.6rem;
+      padding: 0.5rem;
       margin: 0 auto;
       background-color: transparent;
       border: 0.1rem solid $border-primary;
@@ -22,7 +22,7 @@
         background-color: transparent;
         @include text($text-primary, 400, 1.2rem);
         @include flex(space-around, center);
-        height: 4.4rem;
+        height: 3.2rem;
         position: relative;
         cursor: pointer;
         @include breakpoint(lg) {
@@ -46,18 +46,33 @@
 
     .pricing-tiers {
       width: 100%;
-      @include flex(null, center, row, 2.4rem);
-      height: 55rem;
+      @include flex(null, center, row, 4.8rem);
+      flex-wrap: wrap;
+      @include breakpoint(md) {
+        gap: 4.2rem;
+        flex-wrap: nowrap;
+        max-width: 65rem;
+      }
+      @include breakpoint(lg) {
+        gap: 2.4rem;
+        max-width: unset;
+      }
       &__options {
-        border-radius: 1.6rem;
+        border-radius: 1rem;
         width: 100%;
+        max-width: 60%;
         padding: 1.6rem;
         margin: 0 auto;
         background-color: $plans-pricing-options-bg;
-        @include flex(space-between, flex-start, column, 2.4rem);
+        @include flex(space-between, flex-start, column, 1.5rem);
+        @include breakpoint(md) {
+          max-width: unset;
+        }
         @include breakpoint(lg) {
+          border-radius: 1.6rem;
           max-width: 30rem;
           padding: 2.4rem;
+          gap: 2.4rem;
         }
         &.business {
           position: relative;
@@ -98,38 +113,42 @@
           }
         }
         .option-detail {
-          @include flex(space-between, flex-start, column, 2.4rem);
-          padding: 0 0.8rem;
+          @include flex(space-between, flex-start, column, 1.5rem);
+          padding: 0 0.5rem;
+          @include breakpoint(lg) {
+            padding: 0 0.8rem;
+            gap: 2.4rem;
+          }
           &__name {
             text-transform: uppercase;
             font-style: italic;
             opacity: 0.5;
-            @include text($text-secondary, 900, 1.6rem);
+            @include text($text-secondary, 900, 1.6rem, 1.8rem);
             @include breakpoint(lg) {
               font-size: 2.4rem;
               line-height: 2rem;
             }
           }
           &__price {
-            @include text($text-secondary, 900, 3.2rem);
+            @include text($text-secondary, 900, 3rem, 2.4rem);
             @include breakpoint(lg) {
               font-size: 4.8rem;
               line-height: 3.8rem;
             }
             span {
-              margin-left: -1rem;
+              margin-left: -0.5rem;
               opacity: 0.5;
-              @include text($text-secondary, 700, 1rem);
+              @include text($text-secondary, 700, 1rem, 1.2rem);
               @include breakpoint(lg) {
                 font-size: 1.6rem;
-                line-height: 1rem;
               }
             }
           }
           &__description {
-            @include text($text-secondary, 500, 1rem);
+            @include text($text-secondary, 500, 1rem, 1.2rem);
             @include breakpoint(lg) {
               font-size: 1.6rem;
+              line-height: 1.9rem;
             }
           }
         }
@@ -144,15 +163,20 @@
         .support-details {
           width: 100%;
           padding: 0 0.8px;
-          @include text($text-secondary, 700, 1rem);
+          @include text($text-secondary, 700, 1rem, 1.2rem);
+          @include flex(left, flex-start, column, 1rem);
           @include breakpoint(lg) {
             padding: 0 1.2rem;
             font-size: 1.6rem;
+            line-height: 1.9rem;
+            gap: 1.6rem;
           }
-          @include flex(left, flex-start, column, 1.6rem);
           &__items {
             @include flex(left, center);
-            padding: 1.2rem 0;
+            padding: 0.6rem 0;
+            @include breakpoint(lg) {
+              padding: 1.2rem 0;
+            }
             > svg {
               margin-right: 0.8rem;
               @include breakpoint(lg) {
