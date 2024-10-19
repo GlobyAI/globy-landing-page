@@ -8,7 +8,7 @@ export default function Header() {
       <nav className="globy__header__navbar">
         <Link href={APP_ROUTERS.INDEX}>
           <Image
-            src="/images/globy logo.png"
+            src="/images/globy_logo.png"
             alt="Globy Logo"
             fill
             sizes="(min-width: 768px) 155px, 58px"
