@@ -28,16 +28,30 @@
       display: block;
       padding: 1rem;
       padding-left: 3.2rem;
-      @include text($text-secondary, 500, 1rem, 1rem);
+      padding-top: 1.4rem;
+      @include text($text-secondary, 500, 1.2rem, 1rem);
       border-color: transparent;
       @include breakpoint(md) {
+        font-size: 1.4rem;
+      }
+      @include breakpoint(lg) {
         border-radius: 1.2rem;
-        padding: 2.6rem 1.6rem 1.6rem;
+        padding: 2.4rem 1.6rem 1.6rem;
         padding-left: 5.6rem;
         font-size: 1.6rem;
         height: 5.6rem;
       }
 
+      &::placeholder {
+        @include text($input-label, 400, 1.2rem);
+        @include breakpoint(md) {
+          font-size: 1.4rem;
+        }
+        @include breakpoint(lg) {
+          font-size: 1.6rem;
+          padding-left: 0;
+        }
+      }
       &:placeholder-shown {
         ~ .textfield__label {
           visibility: hidden;
@@ -78,6 +92,9 @@
         @include flex(left, center);
         @include text($input-label, 400, 1.2rem, 1.4);
         @include breakpoint(md) {
+          font-size: 1.4rem;
+        }
+        @include breakpoint(lg) {
           font-size: 1.6rem;
         }
       }
