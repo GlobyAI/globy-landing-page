@@ -49,7 +49,7 @@ function SelectBox(props: SelectBoxProps) {
           {error ? <IndustryErrorIcon /> : <IndustryIcon />}
         </div>
         <div id="dropdown-btn">
-          {value === '' ? 'Select' : selectedValue?.label}
+          {value === '' ? 'Select industry' : selectedValue?.label}
         </div>
         <div id="dropdown-content">
           <input

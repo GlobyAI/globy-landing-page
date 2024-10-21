@@ -46,14 +46,15 @@ export default function SignUpForm() {
       />
       <TextField
         id="email"
-        label="Email"
         icon={errors.email ? <EmailErrorIcon /> : <EmailIcon />}
         name="email"
+        label="Email"
         value={values.email}
         onChange={(e) => handleChange('email', e.target.value)}
         type="email"
         error={Boolean(errors.email)}
         helperText={errors.email}
+        placeholder="name@email.com"
       />
 
       <SelectBox

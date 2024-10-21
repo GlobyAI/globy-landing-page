@@ -6,6 +6,7 @@
   overflow: hidden;
   &__container {
     position: relative;
+
     .textfield__icons {
       position: absolute;
       left: 0.6rem;
@@ -29,18 +30,26 @@
       padding-left: 3.2rem;
       @include text($text-secondary, 500, 1rem, 1rem);
       border-color: transparent;
-      @include breakpoint(lg) {
+      @include breakpoint(md) {
         border-radius: 1.2rem;
+        padding: 2.6rem 1.6rem 1.6rem;
         padding-left: 5.6rem;
         font-size: 1.6rem;
         height: 5.6rem;
-        padding: 2.6rem 1.6rem 1.6rem;
       }
-      &:not(:disabled):focus,
-      &:not(:disabled):focus-within,
+
+      &:placeholder-shown {
+        ~ .textfield__label {
+          visibility: hidden;
+        }
+      }
       &:not(:disabled):hover {
         border-color: $input-border-active;
+      }
+      &:not(:disabled):focus,
+      &:not(:disabled):focus-within {
         ~ .textfield__label {
+          visibility: visible;
           top: 5%;
           transform: scale(0.75);
           p {
@@ -61,7 +70,7 @@
       transform: scale(1);
       @include breakpoint(lg) {
         left: 5.6rem;
-        top: 20%;
+        top: 30%;
       }
       p {
         height: 100%;
@@ -70,9 +79,6 @@
         @include text($input-label, 400, 1.2rem, 1.4);
         @include breakpoint(md) {
           font-size: 1.6rem;
-        }
-        @include breakpoint(lg) {
-          font-size: 2rem;
         }
       }
     }

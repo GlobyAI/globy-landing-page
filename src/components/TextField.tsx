@@ -15,9 +15,6 @@ const TextField = (props: TextFieldProps) => {
   if (error && helperText !== '') {
     textfieldClassName += ` error`
   }
-  if (error === false && helperText == undefined) {
-    textfieldClassName += ` success`
-  }
   if (className) {
     textfieldClassName += ` ${className}`
   }
@@ -29,13 +26,13 @@ const TextField = (props: TextFieldProps) => {
   return (
     <fieldset className={textfieldClassName}>
       <div className="textfield__container">
+        {icon && <span className="textfield__icons">{icon}</span>}
         <input id={id} value={value} {...rest} />
         {label && (
           <label htmlFor={id} className="textfield__label">
             <p>{label}</p>
           </label>
         )}
-        {icon && <span className="textfield__icons">{icon}</span>}
       </div>
       {error && helperText && (
         <small className="textfield__error">

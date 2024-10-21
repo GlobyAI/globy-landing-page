@@ -10,7 +10,8 @@ export default function Benefits() {
         <article className="benefits__items">
           <AppWindowICon />
           <strong className="benefits__items__title">
-            Industry Best Practices
+            Industry Best <br />
+            Practices
           </strong>
           <p className="benefits__items__content">
             Benefit from time-tested standards and practices, built right into
@@ -21,7 +22,8 @@ export default function Benefits() {
           <MessageCircleHeartIcon />
 
           <strong className="benefits__items__title">
-            Tailored Uniqueness
+            Tailored <br />
+            Uniqueness
           </strong>
           <p className="benefits__items__content">
             We analyze your competitors and create a design that’s truly unique
@@ -31,7 +33,8 @@ export default function Benefits() {
         <article className="benefits__items">
           <AlarmClockIcon />
           <strong className="benefits__items__title">
-            Lightning-Fast Launch
+            Lightning-Fast <br />
+            Launch
           </strong>
           <p className="benefits__items__content">
             Get your website up and running in just hours, so you can start
@@ -41,7 +44,8 @@ export default function Benefits() {
         <article className="benefits__items">
           <EarthIcon />
           <strong className="benefits__items__title">
-            Comprehensive Built-In SEO
+            Comprehensive
+            <br /> Built-In SEO
           </strong>
           <p className="benefits__items__content">
             Your site is fully optimized for search engines, boosting visibility

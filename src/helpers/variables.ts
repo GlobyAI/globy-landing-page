@@ -4,23 +4,27 @@ export const pricingOptions = [
     forBusiness: false,
     name: 'Standard',
     price: '100 kr',
-    description: 'For those who want to let Globy kick-start the journey.',
+    description: 'For those who want to kick-start their Globy journey.',
     subscribeUrl: '/#',
     benefits: [
       {
-        title: 'Globy assistans',
+        title: 'Site builder',
         isSupported: true,
       },
       {
-        title: 'Content creation',
+        title: 'Custom domain',
         isSupported: false,
       },
       {
-        title: 'Unlimited changes',
+        title: 'Ad-free',
         isSupported: false,
       },
       {
-        title: 'Social media coverage',
+        title: 'Site history',
+        isSupported: false,
+      },
+      {
+        title: 'Support',
         isSupported: false,
       },
     ],
@@ -29,24 +33,28 @@ export const pricingOptions = [
     id: 2,
     forBusiness: false,
     name: 'PRO',
-    price: '200 kr',
+    price: '199 kr',
     description: 'For those who want to take their business to the next level.',
     subscribeUrl: '/#',
     benefits: [
       {
-        title: 'Globy assistans',
+        title: 'Site builder',
         isSupported: true,
       },
       {
-        title: 'Content creation',
+        title: 'Custom domain',
         isSupported: true,
       },
       {
-        title: 'Unlimited changes',
+        title: 'Ad-free',
         isSupported: false,
       },
       {
-        title: 'Social media coverage',
+        title: 'Site history',
+        isSupported: false,
+      },
+      {
+        title: 'Support',
         isSupported: false,
       },
     ],
@@ -55,24 +63,28 @@ export const pricingOptions = [
     id: 3,
     forBusiness: true,
     name: 'BUSINESS',
-    price: '300 kr',
-    description: 'For those who want to become a global star.',
+    price: '599 kr',
+    description: 'For those who want to become a global superhero.',
     subscribeUrl: '/#',
     benefits: [
       {
-        title: 'Globy assistans',
+        title: 'Site builder',
         isSupported: true,
       },
       {
-        title: 'Content creation',
+        title: 'Custom domain',
         isSupported: true,
       },
       {
-        title: 'Unlimited changes',
+        title: 'Ad-free',
         isSupported: true,
       },
       {
-        title: 'Social media coverage',
+        title: 'Site history',
+        isSupported: true,
+      },
+      {
+        title: 'Support',
         isSupported: true,
       },
     ],
