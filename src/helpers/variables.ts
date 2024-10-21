@@ -33,7 +33,7 @@ export const pricingOptions = [
     id: 2,
     forBusiness: false,
     name: 'PRO',
-    price: 199,
+    price: 19,
     description: 'For those who want to take their business to the next level.',
     subscribeUrl: '/#',
     benefits: [
@@ -63,7 +63,7 @@ export const pricingOptions = [
     id: 3,
     forBusiness: true,
     name: 'BUSINESS',
-    price: 599,
+    price: 59,
     description: 'For those who want to become a global superhero.',
     subscribeUrl: '/#',
     benefits: [
