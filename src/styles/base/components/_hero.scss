@@ -1,0 +1,197 @@
+.globy__hero {
+  position: relative;
+  margin: 0 auto;
+  max-width: 100rem;
+  z-index: 100;
+  .circle:nth-child(1) {
+    left: 70%;
+    top: -20%;
+    width: 100%;
+    max-width: 30rem;
+    aspect-ratio: 1 / 1;
+    @include breakpoint(lg) {
+      width: 80%;
+    }
+    @include breakpoint(lg) {
+      right: -70%;
+      left: auto;
+      top: -50%;
+      max-width: 110rem;
+    }
+  }
+
+  .circle:nth-child(2) {
+    left: -50%;
+    top: -$header-height;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    @include breakpoint(lg) {
+      width: 80%;
+    }
+    @include breakpoint(lg) {
+      left: -60%;
+      max-width: 145rem;
+    }
+  }
+  .circle:nth-child(3) {
+    top: 30%;
+    right: 5%;
+    width: 30%;
+    @include breakpoint(lg) {
+      right: -20%;
+      top: 50%;
+      width: 50%;
+    }
+    aspect-ratio: 1 / 1;
+  }
+
+  .intro {
+    width: 100%;
+    max-width: 100rem;
+    padding: 10.5rem 3.4rem 0rem 3.4rem;
+    @include breakpoint(md) {
+      padding: 3.7rem 9.2rem;
+    }
+    @include breakpoint(lg) {
+      padding: 8rem 0;
+    }
+    @include flex(center, center, column, 3.2rem);
+    .heading {
+      text-align: center;
+      background: $intro-liner-gradient;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      max-width: unset;
+      span {
+        color: orange !important;
+      }
+    }
+    &__subtitle {
+      max-width: 61rem;
+      width: 100%;
+      text-align: center;
+      @include text($text-primary, 500, 1.6rem);
+      @include breakpoint(lg) {
+        font-size: 2.4rem;
+      }
+    }
+
+    > a {
+      @include flex(center, center);
+    }
+  }
+
+  .benefits {
+    width: 100%;
+    padding: 19.4rem 0;
+    margin: 0 auto;
+    max-width: 38rem;
+    @include grid(repeat(2, 1fr), auto, 5rem);
+    @include breakpoint(md) {
+      @include flex(null, center, null, 1.2rem);
+      max-width: 66rem;
+      gap: 1rem;
+      flex-wrap: nowrap;
+    }
+    @include breakpoint(lg) {
+      gap: 2.4rem;
+    }
+
+    @include breakpoint(lg) {
+      max-width: unset;
+      gap: 2.4rem;
+      padding: 19.4rem 0;
+    }
+    &__items {
+      width: 100%;
+      padding: 0px;
+      @include flex(flex-start, center, column);
+      text-align: center;
+      @include breakpoint(lg) {
+        padding: 0 1.6rem;
+      }
+
+      svg {
+        transform: scale(0.5);
+        @include breakpoint(lg) {
+          transform: scale(1);
+        }
+      }
+
+      &__title {
+        @include text($text-primary, 400, 1.4rem);
+        line-height: normal;
+        text-align: center;
+        word-break: break-word;
+        margin: 0 0 1rem;
+        @include breakpoint(md) {
+          font-size: 1.2rem;
+        }
+        @include breakpoint(lg) {
+          margin: 2rem 0;
+          font-size: 2.4rem;
+        }
+      }
+
+      &__content {
+        padding: 0;
+        text-align: center;
+        text-wrap: wrap;
+        @include text($benefit-item-content, 400, 1.3rem);
+        line-height: normal;
+        word-break: balance;
+        @include breakpoint(lg) {
+          font-size: 1.6rem;
+          padding: 1.6rem;
+        }
+        @include breakpoint(md) {
+          padding: 0 0.8rem;
+        }
+      }
+    }
+  }
+
+  .dots {
+    padding: 80px 0px;
+    position: relative;
+    z-index: 100;
+    @include flex(center, center, column, 1.4rem);
+    @include breakpoint(lg) {
+      gap: 2rem;
+    }
+    &__items {
+      background-color: $text-primary;
+      border-radius: 50%;
+      animation: animateDots 1.5s infinite ease-in-out;
+      @include box(0.6rem, 0.6rem);
+      @include breakpoint(lg) {
+        @include box(0.8rem, 0.8rem);
+      }
+      &:nth-child(1) {
+        animation-delay: 0s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+    }
+  }
+}
+
+@include keyframes(animateDots) {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(2);
+  }
+}

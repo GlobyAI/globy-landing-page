@@ -1,7 +1,36 @@
-.loading__wrapper {
-  @include position(fixed, 0, 0, 0, 0);
-  z-index: 10000;
+.heading {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 74rem;
+  @include text($text-primary, 800, 4rem, 4.8rem);
   width: 100%;
-  height: 100%;
-  @include flex(center, center);
+  display: block;
+  font-style: italic;
+  @include breakpoint(lg) {
+    font-size: 8rem;
+    line-height: 7.8rem;
+  }
+}
+
+.divider {
+  position: relative;
+  &::after {
+    content: '';
+    width: 71rem;
+    max-width: 75%;
+    height: 0.1rem;
+    border-bottom: 0.1rem solid $divider;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+}
+
+.circle {
+  background: $circle-gradient;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
 }

@@ -1,0 +1,23 @@
+.globy__header {
+  z-index: 1000;
+  position: relative;
+  padding: 2.9rem 3.4rem;
+  width: 100%;
+  @include breakpoint(lg) {
+    padding: 8rem 0px;
+  }
+  &__navbar {
+    @include flex(left, center);
+    @include breakpoint(md) {
+      justify-content: center;
+      padding: 0;
+    }
+    > a {
+      position: relative;
+      @include box(7rem, 2.8rem);
+      @include breakpoint(lg) {
+        @include box(15.6rem, 5.8rem);
+      }
+    }
+  }
+}

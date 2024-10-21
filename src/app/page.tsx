@@ -1,8 +1,12 @@
-import { APP_ROUTERS, METADATA } from '@/helpers/config'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-
+import HowItWorks from '@/components/HowItWorks'
+import Hero from '@/components/Hero'
+import Plans from '@/components/Plans'
 export default function LandingPage() {
-  return <div className="home-page__auth">LandingPage</div>
+  return (
+    <main className="globy__main">
+      <Hero />
+      <HowItWorks />
+      <Plans />
+    </main>
+  )
 }

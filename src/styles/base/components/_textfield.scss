@@ -1,0 +1,148 @@
+.textfield {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  &__container {
+    position: relative;
+
+    .textfield__icons {
+      position: absolute;
+      left: 0.6rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      @include flex(center, center);
+      @include breakpoint(lg) {
+        left: 1.6rem;
+      }
+    }
+    input {
+      background-color: $input-bg;
+      width: 100%;
+      outline: 0;
+      border-radius: 0.6rem;
+      border: 0.2rem solid;
+      height: 4.2rem;
+      display: block;
+      padding: 1rem;
+      padding-left: 3.2rem;
+      padding-top: 1.4rem;
+      @include text($text-secondary, 500, 1.2rem, 1rem);
+      border-color: transparent;
+      @include breakpoint(md) {
+        font-size: 1.4rem;
+      }
+      @include breakpoint(lg) {
+        border-radius: 1.2rem;
+        padding: 2.4rem 1.6rem 1.6rem;
+        padding-left: 5.6rem;
+        font-size: 1.6rem;
+        height: 5.6rem;
+      }
+
+      &::placeholder {
+        @include text($input-label, 400, 1.2rem);
+        @include breakpoint(md) {
+          font-size: 1.4rem;
+        }
+        @include breakpoint(lg) {
+          font-size: 1.6rem;
+          padding-left: 0;
+        }
+      }
+      &:placeholder-shown {
+        ~ .textfield__label {
+          visibility: hidden;
+        }
+      }
+      &:not(:disabled):hover {
+        border-color: $input-border-active;
+      }
+      &:not(:disabled):focus,
+      &:not(:disabled):focus-within {
+        ~ .textfield__label {
+          visibility: visible;
+          top: 5%;
+          transform: scale(0.75);
+          p {
+            color: $input-label-active;
+          }
+        }
+      }
+    }
+
+    .textfield__label {
+      pointer-events: none;
+      position: absolute;
+      padding: 0 0.2rem;
+      top: 25%;
+      left: 3.2rem;
+      transform-origin: top left;
+      transition: top 0.2s ease-out;
+      transform: scale(1);
+      @include breakpoint(lg) {
+        left: 5.6rem;
+        top: 30%;
+      }
+      p {
+        height: 100%;
+        width: 100%;
+        @include flex(left, center);
+        @include text($input-label, 400, 1.2rem, 1.4);
+        @include breakpoint(md) {
+          font-size: 1.4rem;
+        }
+        @include breakpoint(lg) {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+  &.error {
+    .textfield__container {
+      input {
+        background-color: $input-bg-error !important;
+        border-color: $input-border-error !important;
+        &:focus-within,
+        &:hover {
+          border-color: $input-label-error !important;
+        }
+      }
+      .textfield__label {
+        p {
+          color: $input-label-error !important;
+        }
+      }
+    }
+  }
+
+  &.filled {
+    .textfield__container {
+      input {
+        border-color: $input-border;
+        background-color: $input-bg;
+        border-color: $input-border-active;
+      }
+      .textfield__label {
+        top: 5%;
+        transform: translateY(0);
+        transform: scale(0.75);
+        p {
+          color: $input-label-active;
+        }
+      }
+    }
+  }
+  &__error {
+    @include flex(left, center);
+    @include text($input-error-message, 400, 1.2rem);
+    @include breakpoint(lg) {
+      font-size: 1.4rem;
+    }
+    svg {
+      margin-right: 0.4rem;
+    }
+  }
+}

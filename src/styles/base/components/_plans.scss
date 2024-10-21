@@ -1,0 +1,194 @@
+.globy__plans {
+  padding: 8rem 0;
+  position: relative;
+  @include flex(center, center, column, 4.8rem);
+  &__subscription {
+    @include flex(center, center, column, 4.8rem);
+    .billing-circle {
+      border-radius: 10rem;
+      padding: 0.5rem;
+      margin: 0 auto;
+      background-color: transparent;
+      border: 0.1rem solid $border-primary;
+      width: 28rem;
+      @include breakpoint(lg) {
+        padding: 0.8rem;
+        width: 37rem;
+      }
+      @include flex(space-between, center);
+      &__options {
+        width: 50%;
+        border-radius: 999999px;
+        background-color: transparent;
+        @include text($text-primary, 400, 1.2rem);
+        @include flex(space-around, center);
+        height: 3.2rem;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        @include breakpoint(lg) {
+          font-size: 1.6rem;
+        }
+        &--annually {
+          padding-left: 1rem;
+          svg {
+            transform: scale(1);
+            @include breakpoint(lg) {
+              transform: scale(1.2);
+            }
+          }
+        }
+        &.selected {
+          background-color: $plans-billing-selected-bg;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .pricing-tiers {
+      width: 100%;
+      @include flex(null, center, row, 4.8rem);
+      flex-wrap: wrap;
+      @include breakpoint(md) {
+        gap: 4.2rem;
+        flex-wrap: nowrap;
+        max-width: 65rem;
+      }
+      @include breakpoint(lg) {
+        gap: 2.4rem;
+        max-width: unset;
+      }
+      &__options {
+        border-radius: 1rem;
+        width: 100%;
+        max-width: 50%;
+        min-width: 20rem;
+        padding: 1.6rem;
+        margin: 0 auto;
+        background-color: $plans-pricing-options-bg;
+        @include flex(space-between, flex-start, column, 1.5rem);
+        @include breakpoint(md) {
+          max-width: unset;
+          min-width: unset;
+        }
+        @include breakpoint(lg) {
+          border-radius: 1.6rem;
+          max-width: 30rem;
+          padding: 2.4rem;
+          gap: 2.4rem;
+        }
+        &.business {
+          position: relative;
+          background-color: transparent;
+          border: 0.2rem solid $border-primary;
+          .business__icon {
+            position: absolute;
+            width: 6rem;
+            height: 7.5rem;
+            top: -2rem;
+            right: 0.8rem;
+            z-index: 10;
+            @include breakpoint(lg) {
+              top: -1.3rem;
+              right: 2rem;
+            }
+          }
+          .option-detail {
+            &__name {
+              color: $plans-business-option-text;
+              opacity: 1;
+            }
+
+            &__price {
+              color: $text-primary;
+              span {
+                opacity: 1;
+                color: $plans-business-option-text;
+              }
+            }
+
+            &__description {
+              color: $text-primary;
+            }
+          }
+          .support-details {
+            color: $text-primary;
+          }
+        }
+        .option-detail {
+          @include flex(space-between, flex-start, column, 1.5rem);
+          padding: 0 0.5rem;
+          @include breakpoint(lg) {
+            padding: 0 0.8rem;
+            gap: 2.4rem;
+          }
+          &__name {
+            text-transform: uppercase;
+            font-style: italic;
+            opacity: 0.5;
+            @include text($text-secondary, 900, 1.6rem, 1.8rem);
+            @include breakpoint(lg) {
+              font-size: 2.4rem;
+              line-height: 2rem;
+            }
+          }
+          &__price {
+            @include text($text-secondary, 900, 3rem, 2.4rem);
+            @include breakpoint(lg) {
+              font-size: 4.8rem;
+              line-height: 3.8rem;
+            }
+            span {
+              margin-left: -0.5rem;
+              opacity: 0.5;
+              @include text($text-secondary, 700, 1rem, 1.2rem);
+              @include breakpoint(lg) {
+                font-size: 1.6rem;
+              }
+            }
+          }
+          &__description {
+            @include text($text-secondary, 500, 1rem, 1.2rem);
+            @include breakpoint(lg) {
+              font-size: 1.6rem;
+              line-height: 1.9rem;
+            }
+          }
+        }
+
+        > a {
+          width: 100%;
+          button {
+            width: 100%;
+          }
+        }
+
+        .support-details {
+          width: 100%;
+          padding: 0 0.8px;
+          @include text($text-secondary, 700, 1rem, 1.2rem);
+          @include flex(left, flex-start, column, 1rem);
+          @include breakpoint(lg) {
+            padding: 0 1.2rem;
+            font-size: 1.6rem;
+            line-height: 1.9rem;
+            gap: 1.6rem;
+          }
+          &__items {
+            @include flex(left, center);
+            padding: 0.6rem 0;
+            @include breakpoint(lg) {
+              padding: 1.2rem 0;
+            }
+            > svg {
+              margin-right: 0.8rem;
+              @include breakpoint(lg) {
+                margin-right: 1.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+$text-primary: $white;
+$text-secondary: $black;
+$text-error: $red;
+$app-bg: $deep-space-blue;
+
+$border-primary: $white;
+$divider: $charcoal-blue;
+
+$input-bg: $white;
+$input-bg-error: $light-red;
+$input-label: $black;
+$input-label-active: $purple;
+$input-label-error: $red;
+$input-border: rgba($cadet-gray, 0.1);
+$input-border-active: rgba($purple, 0.2);
+$input-border-error: $red;
+$input-error-message: $red;
+
+// Button
+$btn-bg: $purple;
+$btn-bg-active: $light-purple-80;
+$btn-text: $white;
+$btn-text-active: $purple;
+$btn-border-active: $purple;
+$btn-bg-disabled: rgba($cadet-gray, 0.1);
+$btn-border-disabled-active: $gray-200;
+$btn-text-disabled: $gray-200;
+$btn-icon-disabled: $gray-200;
+$btn-icon-disabled-active: $gray-200;
+
+// Info - Benefits
+$benefit-item-title: $white;
+$benefit-item-content: $cadet-gray;
+
+// Message
+$message-bg-globy: $gray-100;
+$message-bg-customer: $purple;
+
+// Plans
+$plans-options-bg: $white;
+$plans-billing-selected-bg: $purple;
+$plans-pricing-options-bg: $white;
+$plans-business-option-text: $purple;
+
+//footer
+
+$copyright: $slate-gray;
