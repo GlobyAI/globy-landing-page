@@ -197,4 +197,5 @@ export const industries = [
   { label: 'Training', value: 'Training' },
   { label: 'Beverages', value: 'Beverages' },
   { label: 'Jewelry', value: 'Jewelry' },
+  { label: 'Other', value: 'Other' },
 ]
