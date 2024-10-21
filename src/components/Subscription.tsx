@@ -48,7 +48,13 @@ export default function Subscription() {
                 <em>{option.name}</em>
               </strong>
               <p className="option-detail__price">
-                {option.price} <span>/month</span>
+                {option.price > 0 ? (
+                  <>
+                    {option.price} kr <span>/month</span>
+                  </>
+                ) : (
+                  'Free'
+                )}
               </p>
 
               <p className="option-detail__description">{option.description}</p>

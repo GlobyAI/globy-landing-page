@@ -3,7 +3,7 @@ export const pricingOptions = [
     id: 1,
     forBusiness: false,
     name: 'Standard',
-    price: '100 kr',
+    price: 0,
     description: 'For those who want to kick-start their Globy journey.',
     subscribeUrl: '/#',
     benefits: [
@@ -33,7 +33,7 @@ export const pricingOptions = [
     id: 2,
     forBusiness: false,
     name: 'PRO',
-    price: '199 kr',
+    price: 199,
     description: 'For those who want to take their business to the next level.',
     subscribeUrl: '/#',
     benefits: [
@@ -47,7 +47,7 @@ export const pricingOptions = [
       },
       {
         title: 'Ad-free',
-        isSupported: false,
+        isSupported: true,
       },
       {
         title: 'Site history',
@@ -63,7 +63,7 @@ export const pricingOptions = [
     id: 3,
     forBusiness: true,
     name: 'BUSINESS',
-    price: '599 kr',
+    price: 599,
     description: 'For those who want to become a global superhero.',
     subscribeUrl: '/#',
     benefits: [
