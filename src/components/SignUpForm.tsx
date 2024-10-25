@@ -25,7 +25,14 @@ export default function SignUpForm() {
   if (isSuccess) {
     return (
       <div className="sign-up-form">
-        <p className="sign-up-form__message">You successfully signed up!</p>
+        <p className="sign-up-form__message">
+          <strong>Thank you for signing up! </strong>
+          <br />
+          <small>
+            You&apos;ve been successfully added to our waitlist. We&apos;ll
+            notify you when early access becomes available.
+          </small>
+        </p>
       </div>
     )
   }

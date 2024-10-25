@@ -40,7 +40,10 @@
         font-size: 1.6rem;
       }
       span {
-        font-size: 2rem;
+        font-size: 1.6rem;
+        @include breakpoint(lg) {
+          font-size: 2rem;
+        }
         margin-right: 0.2rem;
       }
     }

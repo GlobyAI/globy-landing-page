@@ -17,9 +17,9 @@ export default function Subscription() {
 
   return (
     <div className="globy__plans__subscription">
-      <div className="billing-circle">
+      <div className={`billing-circle  ${selectedPlan}`}>
         <p
-          className={`billing-circle__options ${selectedPlan === 'monthly' ? 'selected' : ''} `}
+          className={`billing-circle__options `}
           onClick={() => handleChangePlan('monthly')}
         >
           Monthly
