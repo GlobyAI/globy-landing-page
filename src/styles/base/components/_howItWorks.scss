@@ -301,7 +301,7 @@
               border-radius: 1.6rem;
               max-width: 17.5rem;
               @include breakpoint(md) {
-                max-width: 20rem;
+                max-width: 24rem;
               }
               @include breakpoint(lg) {
                 max-width: 47rem;
@@ -341,7 +341,7 @@
                 margin-bottom: 4rem;
               }
               .message--globy {
-                max-width: 22rem;
+                max-width: 24rem;
                 @include breakpoint(md) {
                   max-width: 30rem;
                 }
