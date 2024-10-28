@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import GlobyIcon from 'public/icons/globy.svg'
 import Image from 'next/image'
@@ -7,6 +8,7 @@ type Props = {
   message?: string
   children?: React.ReactNode
   icon?: React.ReactNode
+  isTyping?: boolean
 }
 
 export default function Message({
@@ -14,12 +16,13 @@ export default function Message({
   message,
   children,
   icon,
+  isTyping,
 }: Props) {
   return (
     <div
       className={`message ${isCustomer ? 'message--customer' : 'message--globy'}`}
     >
-      <figure className={`avatar ${isCustomer ? 'lg' : ''} `}>
+      <figure className={`avatar ${isCustomer ? 'lg' : ''}`}>
         {isCustomer ? (
           <Image
             src="/images/customer-avatar.png"
@@ -33,7 +36,19 @@ export default function Message({
         )}
       </figure>
 
-      <span className="message__content">{children ? children : message}</span>
+      <span className="message__content">
+        {isTyping ? (
+          <div className="typing-indicator">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        ) : children ? (
+          children
+        ) : (
+          message
+        )}
+      </span>
       {icon && icon}
     </div>
   )
