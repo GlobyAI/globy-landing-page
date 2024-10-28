@@ -12,6 +12,7 @@ export default function Subscription() {
   const [selectedPlan, setSelectedPlan] = React.useState('monthly')
 
   const handleChangePlan = (plan: string) => {
+    if (plan === selectedPlan) return
     setSelectedPlan(plan)
   }
 
@@ -26,7 +27,6 @@ export default function Subscription() {
         </p>
         <p
           className={`billing-circle__options billing-circle__options--annually ${selectedPlan === 'annually' ? 'selected' : ''} `}
-          onClick={() => handleChangePlan('annually')}
         >
           Annually
           <DiscountIcon />
