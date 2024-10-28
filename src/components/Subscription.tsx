@@ -9,7 +9,7 @@ import { pricingOptions } from '@/helpers/variables'
 import Link from 'next/link'
 
 export default function Subscription() {
-  const [selectedPlan, setSelectedPlan] = React.useState('annually')
+  const [selectedPlan, setSelectedPlan] = React.useState('monthly')
 
   const handleChangePlan = (plan: string) => {
     setSelectedPlan(plan)
