@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import Message from './Message';
-import TypingAnimation from './TypingAnimation';
+import React, { useEffect, useState } from 'react'
+import Message from './Message'
+import TypingAnimation from './TypingAnimation'
 
 type ChatHistoryProps = {
-  isGreetingAnimationDone: boolean;
-  isInView: boolean;
-  FirstMessageDone?: boolean;
-};
+  isGreetingAnimationDone: boolean
+  isInView: boolean
+  FirstMessageDone?: boolean
+}
 
 export default function ChatHistory({
   isGreetingAnimationDone,
   isInView,
 }: ChatHistoryProps) {
-  const [startChatAnimation, setStartChatAnimation] = useState(false);
-  const [firstMessageDone, setFirstMessageDone] = useState(false);
-  const [secondMessageDone, setSecondMessageDone] = useState(false);
-  const [thirdMessageDone, setThirdMessageDone] = useState(false);
+  const [startChatAnimation, setStartChatAnimation] = useState(false)
+  const [firstMessageDone, setFirstMessageDone] = useState(false)
+  const [secondMessageDone, setSecondMessageDone] = useState(false)
+  const [thirdMessageDone, setThirdMessageDone] = useState(false)
 
   useEffect(() => {
     if (isGreetingAnimationDone && isInView && !startChatAnimation) {
-      setStartChatAnimation(true);
+      setStartChatAnimation(true)
     }
-  }, [isGreetingAnimationDone, isInView, startChatAnimation]);
+  }, [isGreetingAnimationDone, isInView, startChatAnimation])
 
   return (
     <ul className="chat__history">
@@ -56,7 +56,8 @@ export default function ChatHistory({
 
         {secondMessageDone && (
           <Message isCustomer>
-            I want to create a hair salon that focuses on various beauty products.
+            I want to create a hair salon that focuses on various beauty
+            products.
           </Message>
         )}
       </li>
@@ -78,7 +79,8 @@ export default function ChatHistory({
             <Message>
               Hair salon is a great business! We’ve analyzed thousands of
               webpages in this domain and are ready to provide you with the best
-              practices.  <span className="bold">Do you have a website already? </span>
+              practices.{' '}
+              <span className="bold">Do you have a website already? </span>
             </Message>
 
             <Message isCustomer>
@@ -98,5 +100,5 @@ export default function ChatHistory({
         <Message isCustomer />
       </li>
     </ul>
-  );
+  )
 }
