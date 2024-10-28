@@ -10,12 +10,25 @@
     text-align: center;
   }
   &__message {
-    @include text($text-primary, 600, 1.6rem);
-    @include breakpoint(lg) {
-      font-size: 2rem;
+    @include flex(center, center, column, 0.4rem);
+    margin: 2.4rem 0;
+    > strong {
+      @include text($text-primary, 600, 1.6rem);
+      font-weight: 700;
+      @include breakpoint(md) {
+        font-size: 2rem;
+      }
+      @include breakpoint(lg) {
+        font-size: 2.8rem;
+      }
     }
-    margin-bottom: 2.4rem;
-    text-align: center;
+    > small {
+      text-align: center;
+      @include text($text-primary, 600, 1.4rem);
+      @include breakpoint(lg) {
+        font-size: 1.6rem;
+      }
+    }
   }
 
   button {

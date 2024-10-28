@@ -78,10 +78,16 @@
         transform: translateX(-50%);
         z-index: 10;
         width: 100%;
-        max-width: 30rem;
+        max-width: 35rem;
         height: 50rem;
-        @include breakpoint(md) {
+        @include breakpoint(sm) {
           max-width: 53rem;
+          &:nth-child(1) {
+            display: block;
+          }
+          &:nth-child(2) {
+            display: none;
+          }
         }
         @include breakpoint(lg) {
           height: 90rem;
@@ -90,6 +96,7 @@
         > img {
           position: relative;
         }
+
         &::after {
           position: absolute;
           content: '';
@@ -117,7 +124,7 @@
         width: 100%;
         @include breakpoint(md) {
           max-width: 37rem;
-          bottom: -5%;
+          bottom: 0;
         }
         @include breakpoint(lg) {
           bottom: -20%;

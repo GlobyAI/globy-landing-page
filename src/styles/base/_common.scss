@@ -2,10 +2,14 @@
   margin: 0 auto;
   text-align: center;
   max-width: 74rem;
-  @include text($text-primary, 800, 4rem, 4.8rem);
+  @include text($text-primary, 800, 3.8rem, 4.6rem);
   width: 100%;
   display: block;
   font-style: italic;
+  @include breakpoint(md) {
+    font-size: 4.4rem;
+    line-height: 4.2rem;
+  }
   @include breakpoint(lg) {
     font-size: 8rem;
     line-height: 7.8rem;

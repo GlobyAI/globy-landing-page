@@ -11,11 +11,39 @@
       background-color: transparent;
       border: 0.1rem solid $border-primary;
       width: 28rem;
+      position: relative;
       @include breakpoint(lg) {
         padding: 0.8rem;
         width: 37rem;
       }
       @include flex(space-between, center);
+
+      &.annually {
+        &::after {
+          left: calc(50% - 0.5rem);
+          @include breakpoint(lg) {
+            left: calc(50% - 0.8rem);
+          }
+        }
+      }
+      &.monthly {
+        &::after {
+          left: 0.5rem;
+          @include breakpoint(lg) {
+            left: 0.8rem;
+          }
+        }
+      }
+      &::after {
+        content: '';
+        width: 50%;
+        height: 3.2rem;
+        border-radius: 10rem;
+        background-color: $plans-billing-selected-bg;
+        position: absolute;
+        transform: translateX(0);
+        transition: all 0.4s ease;
+      }
       &__options {
         width: 50%;
         border-radius: 999999px;
@@ -38,10 +66,10 @@
             }
           }
         }
-        &.selected {
-          background-color: $plans-billing-selected-bg;
-          font-weight: 600;
-        }
+        // &.selected {
+        //   background-color: $plans-billing-selected-bg;
+        //   font-weight: 600;
+        // }
       }
     }
 
