@@ -1,3 +1,5 @@
+'use client'
+import React, { useEffect, useRef, useState } from 'react'
 import GlobyIcon from 'public/icons/globy.svg'
 import ArrowUpIcon from 'public/icons/circle-arrow-up.svg'
 import Message from './Message'
@@ -5,8 +7,34 @@ import ChatHistory from './ChatHistory'
 import Button from './Button'
 import Link from 'next/link'
 import Image from 'next/image'
+import TypingAnimation from './TypingAnimation'
 
 export default function HowItWorks() {
+  const greetingRef = useRef<HTMLDivElement | null>(null)
+  const [isInView, setIsInView] = useState(false)
+  const [isGreetingAnimationDone, setIsGreetingAnimationDone] = useState(false)
+  const [FirstMessageDone, setFirstMessageDone] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 },
+    )
+
+    if (greetingRef.current) {
+      observer.observe(greetingRef.current)
+    }
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
+
   return (
     <section className="globy__how-it-works divider">
       <div className="circle"></div>
@@ -53,27 +81,46 @@ export default function HowItWorks() {
                     <li className="dot-process-bar__dots"></li>
                   </ul>
                 </div>
-                <strong className="chat__question__globy__greeting">
+                <strong
+                  className="chat__question__globy__greeting"
+                  ref={greetingRef}
+                >
                   Hi, I’m Globy 👋 We’ll begin with some relevant questions,
                   sounds good?
                 </strong>
               </div>
 
               <div className="chat__question__customer">
-                <Message
-                  isCustomer
-                  icon={<ArrowUpIcon />}
-                  message="Yes, sure thing, please guide me. I’m about to start my
-                business."
-                />
+                <Message isCustomer icon={<ArrowUpIcon />}>
+                  {isInView && !FirstMessageDone && (
+                    <TypingAnimation
+                      message="   Yes, sure thing, please guide me. I’m about to start my business. "
+                      delay={1000}
+                      onComplete={() => {
+                        setFirstMessageDone(true)
+                        setIsGreetingAnimationDone(true)
+                      }}
+                    />
+                  )}
+                  {FirstMessageDone && (
+                    <span>
+                      Yes, sure thing, please guide me. I’m about to start my
+                      business.
+                    </span>
+                  )}
+                </Message>
               </div>
             </div>
+            <ChatHistory
+              isGreetingAnimationDone={isGreetingAnimationDone}
+              isInView={isInView}
+              FirstMessageDone={FirstMessageDone}
+            />
 
-            <ChatHistory />
             <div className="presentation">
               <p className="presentation__content">
                 <strong>Globy</strong> creates professional, <br /> relevant,
-                modern and completely unique websites. <br />
+                modern, and completely unique websites. <br />
                 <span>
                   You get easy help to edit the website without any prior
                   knowledge.
