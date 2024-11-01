@@ -1,34 +1,33 @@
 import React, { useState, useEffect } from 'react'
 
 type TypingAnimationProps = {
-  message: string 
-  boldPart?: string 
-  delay?: number 
-  typingSpeed?: number 
-  onComplete?: () => void 
+  message: string
+  boldPart?: string
+  delay?: number
+  typingSpeed?: number
+  onComplete?: () => void
 }
 
 export default function TypingAnimation({
   message,
   boldPart = '',
   delay = 0,
-  typingSpeed = 18, 
+  typingSpeed = 18,
   onComplete,
 }: TypingAnimationProps) {
   const [displayedText, setDisplayedText] = useState<string[]>([])
-  const fullText = message + boldPart 
-  const boldStartIndex = message.length 
+  const fullText = message + boldPart
+  const boldStartIndex = message.length
 
   useEffect(() => {
     let index = 0
     let typingTimeoutId: NodeJS.Timeout
 
-   
     const typeCharacter = () => {
       if (index < fullText.length) {
         setDisplayedText((prevText) => [...prevText, fullText[index]])
         index++
-        typingTimeoutId = setTimeout(typeCharacter, typingSpeed) 
+        typingTimeoutId = setTimeout(typeCharacter, typingSpeed)
       } else {
         if (onComplete) onComplete()
       }
@@ -40,7 +39,7 @@ export default function TypingAnimation({
 
     return () => {
       clearTimeout(startTypingWithDelay)
-      clearTimeout(typingTimeoutId) 
+      clearTimeout(typingTimeoutId)
     }
   }, [fullText, delay, typingSpeed, onComplete])
 

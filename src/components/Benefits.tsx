@@ -57,8 +57,7 @@ export default function Benefits() {
         <span className="dots__items"></span>
         <span className="dots__items"></span>
         <span className="dots__items"></span>
-      </div> 
-    </> 
+      </div>
+    </>
   )
 }
-
