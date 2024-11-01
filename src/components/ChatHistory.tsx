@@ -47,7 +47,7 @@ export default function ChatHistory({
         {firstMessageDone && !secondMessageDone && (
           <Message isCustomer>
             <TypingAnimation
-              message=" I want to create a hair salon that focuses on various beauty products."
+              message="  I want to create a hair salon that focuses on various beauty products."
               onComplete={() => setSecondMessageDone(true)}
               delay={0}
             />
