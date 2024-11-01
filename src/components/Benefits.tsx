@@ -53,12 +53,12 @@ export default function Benefits() {
           </p>
         </article>
       </div>
-
       <div className="dots">
         <span className="dots__items"></span>
         <span className="dots__items"></span>
         <span className="dots__items"></span>
-      </div>
-    </>
+      </div> 
+    </> 
   )
 }
+

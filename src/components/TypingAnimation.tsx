@@ -1,48 +1,48 @@
 import React, { useState, useEffect } from 'react'
 
 type TypingAnimationProps = {
-  message: string // Regular part of the message
-  boldPart?: string // Part of the message to type in bold
-  delay?: number // Optional delay before typing starts
-  onComplete?: () => void // Callback for when typing completes
+  message: string 
+  boldPart?: string 
+  delay?: number 
+  typingSpeed?: number 
+  onComplete?: () => void 
 }
 
 export default function TypingAnimation({
   message,
   boldPart = '',
   delay = 0,
+  typingSpeed = 18, 
   onComplete,
 }: TypingAnimationProps) {
   const [displayedText, setDisplayedText] = useState<string[]>([])
-  const fullText = message + boldPart // Full message including bold part
-  const boldStartIndex = message.length // Start index for bold part
+  const fullText = message + boldPart 
+  const boldStartIndex = message.length 
 
   useEffect(() => {
     let index = 0
-    let animationFrameId: number
+    let typingTimeoutId: NodeJS.Timeout
 
-    // Function to add one character at a time to displayedText
+   
     const typeCharacter = () => {
       if (index < fullText.length) {
         setDisplayedText((prevText) => [...prevText, fullText[index]])
         index++
-        animationFrameId = requestAnimationFrame(typeCharacter)
+        typingTimeoutId = setTimeout(typeCharacter, typingSpeed) 
       } else {
-        cancelAnimationFrame(animationFrameId) // Clean up
         if (onComplete) onComplete()
       }
     }
 
-    // Start typing after optional delay
     const startTypingWithDelay = setTimeout(() => {
-      animationFrameId = requestAnimationFrame(typeCharacter)
+      typeCharacter()
     }, delay)
 
     return () => {
       clearTimeout(startTypingWithDelay)
-      cancelAnimationFrame(animationFrameId) // Clean up on unmount
+      clearTimeout(typingTimeoutId) 
     }
-  }, [fullText, delay, onComplete])
+  }, [fullText, delay, typingSpeed, onComplete])
 
   return (
     <span>
