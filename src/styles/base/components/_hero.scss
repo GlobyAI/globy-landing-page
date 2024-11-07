@@ -88,6 +88,8 @@
   }
 
   .benefits {
+    place-items: center; 
+    padding-top: 100px; 
     width: 100%;
     padding: 19.4rem 0;
     margin: 0 auto;
@@ -102,6 +104,7 @@
     @include breakpoint(lg) {
       gap: 2.4rem;
     }
+
 
     @include breakpoint(lg) {
       max-width: unset;
@@ -158,8 +161,14 @@
   }
 
   .dots {
-    padding: 80px 0px;
-    position: relative;
+    position: absolute; 
+    bottom:-50px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex; 
+    justify-content: center; 
+    z-index: 100;
+    padding: 100px 0px;
     z-index: 100;
     @include flex(center, center, column, 1.4rem);
     @include breakpoint(lg) {
@@ -199,4 +208,35 @@
     transform: scale(2);
   }
 }
+
+.icon-wrapper {
+  width: 100%;
+  max-width: 300px;
+  height: 150px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  position: relative;
+  left: 40%; 
+  transform: translateX(-50%); 
+
+}
+
+
+.icon-container {
+  width: 40px; 
+  height: 40px; 
+  opacity: 0; 
+  transition: opacity 0.25s ease-in-out; 
   
+}
+
+.icon-container.animate {
+  opacity: 1; 
+  transition: opacity 0.1s ease-in-out; 
+}
+
+
