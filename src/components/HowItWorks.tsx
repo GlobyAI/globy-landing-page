@@ -95,7 +95,7 @@ export default function HowItWorks() {
                   {isInView && !FirstMessageDone && (
                     <TypingAnimation
                       message="   Yes, sure thing, please guide me. I’m about to start my business. "
-                      delay={1000}
+                      delay={0}
                       onComplete={() => {
                         setFirstMessageDone(true)
                         setIsGreetingAnimationDone(true)
