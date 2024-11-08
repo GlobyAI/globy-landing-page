@@ -88,10 +88,9 @@
   }
 
   .benefits {
-    place-items: center; 
-    padding-top: 100px; 
+    place-items: center;
     width: 100%;
-    padding: 19.4rem 0;
+    padding: 8rem 0;
     margin: 0 auto;
     max-width: 38rem;
     @include grid(repeat(2, 1fr), auto, 5rem);
@@ -102,14 +101,8 @@
       flex-wrap: nowrap;
     }
     @include breakpoint(lg) {
-      gap: 2.4rem;
-    }
-
-
-    @include breakpoint(lg) {
       max-width: unset;
       gap: 2.4rem;
-      padding: 19.4rem 0;
     }
     &__items {
       width: 100%;
@@ -161,12 +154,12 @@
   }
 
   .dots {
-    position: absolute; 
-    bottom:-50px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    display: flex; 
-    justify-content: center; 
+    // position: absolute;
+    // bottom:-50px;
+    // left: 50%;
+    // transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
     z-index: 100;
     padding: 100px 0px;
     z-index: 100;
@@ -220,23 +213,18 @@
   align-items: center;
   margin: 0 auto;
   position: relative;
-  left: 40%; 
-  transform: translateX(-50%); 
-
+  left: 40%;
+  transform: translateX(-50%);
 }
 
-
 .icon-container {
-  width: 40px; 
-  height: 40px; 
-  opacity: 0; 
-  transition: opacity 0.25s ease-in-out; 
-  
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
 }
 
 .icon-container.animate {
-  opacity: 1; 
-  transition: opacity 0.1s ease-in-out; 
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
 }
-
-

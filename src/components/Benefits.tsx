@@ -11,6 +11,7 @@ export default function Benefits() {
   const [hasAnimated, setHasAnimated] = useState(false)
 
   useEffect(() => {
+    const currentBenefitsRef = benefitsRef.current
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
@@ -27,13 +28,13 @@ export default function Benefits() {
       { threshold: 0.1 },
     )
 
-    if (benefitsRef.current) {
-      observer.observe(benefitsRef.current)
+    if (currentBenefitsRef) {
+      observer.observe(currentBenefitsRef)
     }
 
     return () => {
-      if (benefitsRef.current) {
-        observer.unobserve(benefitsRef.current)
+      if (currentBenefitsRef) {
+        observer.unobserve(currentBenefitsRef)
       }
     }
   }, [hasAnimated])
@@ -103,12 +104,6 @@ export default function Benefits() {
           from day one.
         </p>
       </article>
-
-      <div className="dots">
-        <span className="dots__items"></span>
-        <span className="dots__items"></span>
-        <span className="dots__items"></span>
-      </div>
     </div>
   )
 }
