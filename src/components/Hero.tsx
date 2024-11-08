@@ -23,6 +23,11 @@ export default function Hero() {
       </div>
 
       <Benefits />
+      <div className="dots">
+        <span className="dots__items"></span>
+        <span className="dots__items"></span>
+        <span className="dots__items"></span>
+      </div>
     </section>
   )
 }
