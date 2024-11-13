@@ -188,6 +188,7 @@
                   width: 18rem;
                 }
                 .dot-process-bar__dots {
+                  transition: background-color 0.3s ease, transform 0.3s ease;
                   @include box(0.4rem, 0.4rem);
                   border-radius: 50%;
                   border: 1px solid $purple;
@@ -472,4 +473,13 @@
       }
     }
   }
+}
+
+.dot-process-bar__dots.done {
+  background-color:$purple;
+}
+
+.dot-process-bar__dots.current {
+  background-color:$purple;
+  transform: scale(1.2);
 }

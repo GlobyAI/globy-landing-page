@@ -14,6 +14,7 @@ export default function HowItWorks() {
   const [isInView, setIsInView] = useState(false)
   const [isGreetingAnimationDone, setIsGreetingAnimationDone] = useState(false)
   const [FirstMessageDone, setFirstMessageDone] = useState(false)
+  const [globyQuestionIndex, setGlobyQuestionIndex] = useState(1) // Track Globy's current question progress
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -67,18 +68,16 @@ export default function HowItWorks() {
                   <GlobyIcon />
                 </figure>
                 <div className="chat__question__globy__heading">
-                  <strong>QUESTION 3 OF 10</strong>
+                  <strong>QUESTION {globyQuestionIndex} OF 10</strong>
                   <ul className="dot-process-bar">
-                    <li className="dot-process-bar__dots done"></li>
-                    <li className="dot-process-bar__dots done"></li>
-                    <li className="dot-process-bar__dots done current"></li>
-                    <li className="dot-process-bar__dots"></li>
-                    <li className="dot-process-bar__dots"></li>
-                    <li className="dot-process-bar__dots"></li>
-                    <li className="dot-process-bar__dots"></li>
-                    <li className="dot-process-bar__dots"></li>
-                    <li className="dot-process-bar__dots"></li>
-                    <li className="dot-process-bar__dots"></li>
+                    {[...Array(10)].map((_, index) => (
+                      <li
+                        key={index}
+                        className={`dot-process-bar__dots ${
+                          index < globyQuestionIndex ? 'done' : ''
+                        }`}
+                      ></li>
+                    ))}
                   </ul>
                 </div>
                 <strong
@@ -94,7 +93,7 @@ export default function HowItWorks() {
                 <Message isCustomer icon={<ArrowUpIcon />}>
                   {isInView && !FirstMessageDone && (
                     <TypingAnimation
-                      message="   Yes, sure thing, please guide me. I’m about to start my business. "
+                      message="  Yes, sure thing, please guide me. I’m about to start my business."
                       delay={0}
                       onComplete={() => {
                         setFirstMessageDone(true)
@@ -115,6 +114,7 @@ export default function HowItWorks() {
               isGreetingAnimationDone={isGreetingAnimationDone}
               isInView={isInView}
               FirstMessageDone={FirstMessageDone}
+              setGlobyQuestionIndex={setGlobyQuestionIndex} // Pass setGlobyQuestionIndex to update the question index
             />
 
             <div className="presentation">
