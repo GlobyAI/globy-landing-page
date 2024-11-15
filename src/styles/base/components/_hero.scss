@@ -228,3 +228,17 @@
   opacity: 1;
   transition: opacity 0.1s ease-in-out;
 }
+
+.dot-process-bar__dots {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.dot-process-bar__dots.done {
+  background-color: purple;
+}
+
+.dot-process-bar__dots.current {
+  background-color: purple;
+  transform: scale(1.2);
+}

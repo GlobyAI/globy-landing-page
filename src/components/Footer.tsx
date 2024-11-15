@@ -16,6 +16,7 @@ export default function Footer() {
               className="footer__social-media__links"
               href={METADATA.INSTAGRAM_URL}
               target="_blank"
+              prefetch={false}
             >
               <InstagramIcon />
             </Link>
@@ -26,6 +27,7 @@ export default function Footer() {
               className="footer__social-media__links"
               href={METADATA.LINKEDIN_URL}
               target="_blank"
+              prefetch={false}
             >
               <LinkedInIcon />
             </Link>
