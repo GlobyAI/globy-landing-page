@@ -27,8 +27,12 @@ export default function ChatHistory({
   }, [isGreetingAnimationDone, isInView, startChatAnimation])
 
   useEffect(() => {
-    if (firstGlobyMessageDone) setGlobyQuestionIndex(2)
-    if (thirdGlobyMessageDone) setGlobyQuestionIndex(3)
+    if (firstGlobyMessageDone) {
+      setGlobyQuestionIndex(2)
+    }
+    if (thirdGlobyMessageDone) {
+      setGlobyQuestionIndex(3)
+    }
   }, [
     firstGlobyMessageDone,
     secondGlobyMessageDone,

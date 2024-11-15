@@ -48,7 +48,7 @@ export default function HowItWorks() {
             alt="how-it-works-bg"
             fill
             sizes="(min-width: 768px) 1100px 900px"
-            priority
+            loading="lazy"
           />
         </div>
         <div className="conversation">
@@ -58,7 +58,7 @@ export default function HowItWorks() {
               alt="chat-history-screen"
               fill
               sizes="(min-width: 768px) 1100px 900px"
-              priority
+              loading="lazy"
             />
           </div>
           <div className="chat">

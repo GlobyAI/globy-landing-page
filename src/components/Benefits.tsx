@@ -1,9 +1,9 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import AppWindowIcon from './AppWindowIcon'
-import MessageCircleHeartIcon from './MessageCircleHeartIcon'
-import AlarmIcon from './AlarmClockIcon'
-import EarthIcon from './EarthIcon'
+import MessageCircleHeartIcon from './Icons/MessageCircleHeartIcon'
+import AlarmIcon from './Icons/AlarmClockIcon'
+import EarthIcon from './Icons/EarthIcon'
 
 export default function Benefits() {
   const benefitsRef = useRef(null)
