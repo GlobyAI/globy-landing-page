@@ -10,13 +10,13 @@
     z-index: 1;
     height: 8.3rem;
     padding: 0;
+    @include flex(center, center);
     @include breakpoint(lg) {
       height: 21.8rem;
     }
 
     @include breakpoint(md) {
       height: 12rem;
-      @include flex(center, center);
     }
 
     > a {
