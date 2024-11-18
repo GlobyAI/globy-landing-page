@@ -2,17 +2,17 @@
 
 .globy__how-it-works {
   padding: 8rem 0;
-
   margin: 0 auto;
   position: relative;
   max-width: 136rem;
   @include flex(center, center, column, 0);
+  @include breakpoint(md) {
+    gap: 4rem;
+  }
   @include breakpoint(lg) {
     padding-bottom: 20rem;
   }
-  @include breakpoint(lg) {
-    gap: 4rem;
-  }
+
   &.divider {
     &::after {
       z-index: 10;
@@ -47,6 +47,7 @@
     margin-top: 20rem;
     align-self: stretch;
     @include breakpoint(lg) {
+      padding-bottom: 8rem;
       margin-top: 34em;
     }
     @include flex(null, center, column);
@@ -70,7 +71,7 @@
     .conversation {
       width: 100%;
       position: relative;
-      height: 79rem;
+      min-height: 79rem;
       &__screen-bg {
         display: block;
         position: absolute;
@@ -109,7 +110,7 @@
           background-color: $app-bg;
           @include shadow(0 0 5rem 5rem $deep-space-blue);
           @include breakpoint(lg) {
-            @include shadow(0 0 10rem 10rem $deep-space-blue);
+            @include shadow(0 0 8rem 8rem $deep-space-blue);
           }
         }
       }
