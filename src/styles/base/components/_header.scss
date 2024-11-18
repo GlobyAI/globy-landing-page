@@ -1,22 +1,31 @@
 @use '../../abstracts' as *;
 
-header.globy__header {
+.globy__header {
   z-index: 1000;
   position: relative;
   padding: 2.9rem 3.4rem;
   width: 100%;
-  @include breakpoint(lg) {
-    padding: 8rem 0px;
-  }
   &__navbar {
-    @include flex(left, center);
-    @include breakpoint(md) {
-      justify-content: center;
-      padding: 0;
+    position: relative;
+    z-index: 1;
+    height: 8.3rem;
+    padding: 0;
+    @include breakpoint(lg) {
+      height: 21.8rem;
     }
+
+    @include breakpoint(md) {
+      height: 12rem;
+      @include flex(center, center);
+    }
+
     > a {
       position: relative;
+      display: contents;
       @include box(7rem, 2.8rem);
+      @include breakpoint(md) {
+        @include box(8.5rem, 3.2rem);
+      }
       @include breakpoint(lg) {
         @include box(15.6rem, 5.8rem);
       }
