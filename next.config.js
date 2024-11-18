@@ -6,7 +6,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
+    silenceDeprecations: ['legacy-js-api'],
   },
   webpack(config) {
     config.module.rules.push({

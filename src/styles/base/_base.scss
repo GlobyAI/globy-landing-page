@@ -1,3 +1,4 @@
+@use '../abstracts' as *;
 * {
   padding: 0;
   margin: 0;
@@ -59,9 +60,9 @@ svg {
 }
 
 .loading {
+  background-color: transparent;
   @include position(fixed, 0, 0, 0, 0);
   @include box(100%, 100%);
-  background-color: transparent;
   .loader {
     /* HTML: <div class="loader"></div> */
     .loader {

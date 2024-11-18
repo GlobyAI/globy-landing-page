@@ -1,3 +1,5 @@
+@use '../../abstracts' as *;
+
 button {
   min-width: 11.6rem;
   position: relative;
@@ -7,6 +9,9 @@ button {
   border: 0.2rem solid;
   border-color: transparent;
   text-wrap: nowrap;
+  cursor: pointer;
+  background-color: $btn-bg;
+  padding: 1.8rem 3.2rem;
   @include text($btn-text, 600, 1.2rem);
   @include breakpoint(md) {
     font-size: 1.4rem;
@@ -17,9 +22,6 @@ button {
     height: 5.6rem;
   }
   @include flex(center, center);
-  cursor: pointer;
-  background-color: $btn-bg;
-  padding: 1.8rem 3.2rem;
   svg {
     margin-right: 0.8rem;
     fill-opacity: 1;

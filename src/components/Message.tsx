@@ -29,7 +29,7 @@ export default function Message({
             alt="Conversation - Customer"
             fill
             sizes="56px 56px"
-            priority
+            loading="lazy"
           />
         ) : (
           <GlobyIcon />

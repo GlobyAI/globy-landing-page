@@ -1,5 +1,5 @@
-@import './base';
-@import './font-faces';
-@import './common';
+@forward 'base';
+@forward 'font-faces';
+@forward 'common';
 
-@import './components';
+@forward 'components';

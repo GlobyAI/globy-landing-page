@@ -1,5 +1,6 @@
+@use 'sass:meta';
 @mixin breakpoint($minWidth: 0, $maxWidth: 0, $minHeight: 0, $maxHeight: 0) {
-  $type: type-of($minWidth);
+  $type: meta.type-of($minWidth);
 
   @if $type == string {
     $class: $minWidth;

@@ -1,6 +1,2 @@
-@import './mixins/base';
-@import './mixins/breakpoint';
-@import './mixins/animation';
-@import './variables/base';
-@import './variables/colors';
-@import './variables/palette';
+@forward 'mixins';
+@forward 'variables';

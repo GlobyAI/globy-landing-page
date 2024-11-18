@@ -1,3 +1,5 @@
+@use '../../abstracts' as *;
+
 .globy__plans {
   padding: 8rem 0;
   position: relative;
@@ -48,12 +50,12 @@
         width: 50%;
         border-radius: 999999px;
         background-color: transparent;
-        @include text($text-primary, 400, 1.2rem);
-        @include flex(space-around, center);
         height: 3.2rem;
         position: relative;
         cursor: pointer;
         transition: all 0.2s ease;
+        @include text($text-primary, 400, 1.2rem);
+        @include flex(space-around, center);
         @include breakpoint(lg) {
           font-size: 1.6rem;
         }
@@ -75,8 +77,8 @@
 
     .pricing-tiers {
       width: 100%;
-      @include flex(null, center, row, 4.8rem);
       flex-wrap: wrap;
+      @include flex(null, center, row, 4.8rem);
       @include breakpoint(md) {
         gap: 4.2rem;
         flex-wrap: nowrap;
@@ -144,8 +146,8 @@
           }
         }
         .option-detail {
-          @include flex(space-between, flex-start, column, 1.5rem);
           padding: 0 0.5rem;
+          @include flex(space-between, flex-start, column, 1.5rem);
           @include breakpoint(lg) {
             padding: 0 0.8rem;
             gap: 2.4rem;
@@ -203,8 +205,8 @@
             gap: 1.6rem;
           }
           &__items {
-            @include flex(left, center);
             padding: 0.6rem 0;
+            @include flex(left, center);
             @include breakpoint(lg) {
               padding: 1.2rem 0;
             }
