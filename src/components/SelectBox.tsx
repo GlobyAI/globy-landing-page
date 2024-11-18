@@ -18,7 +18,7 @@ interface SelectBoxProps {
 }
 
 function SelectBox(props: SelectBoxProps) {
-  const { error, message, value, options = [], onSelect } = props
+  const { error = false, message, value, options = [], onSelect } = props
   const [search, setSearch] = useState('')
   let selectClassName = 'select-box'
   if (error) {
