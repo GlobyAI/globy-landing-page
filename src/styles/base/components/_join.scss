@@ -1,3 +1,5 @@
+@use '../../abstracts' as *;
+
 .join {
   width: 100%;
   position: relative;
@@ -8,12 +10,12 @@
   }
   @include flex(center, center, column);
   .heading {
-    @include text($text-primary, 700, 2.6rem, 2.6rem);
     text-align: left;
     margin-bottom: 0.4rem;
     padding: 0;
     word-break: break-word;
     max-width: 25rem;
+    @include text($text-primary, 700, 2.6rem, 2.6rem);
     @include breakpoint(lg) {
       max-width: 46rem;
       margin-bottom: 0.8rem;

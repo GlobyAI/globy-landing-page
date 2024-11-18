@@ -13,7 +13,6 @@ export const METADATA = {
   OG: {
     DESCRIPTION:
       'Build websites faster with chat. Globy creates professional, relevant, modern and completely unique websites. You get easy help to edit the website without any prior knowledge.',
-    IMAGE: '/images/favicon-512x512.png',
     URL: DOMAIN,
     TITLE: 'Globy - Become a Global Superhero, Today!',
   },

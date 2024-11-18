@@ -3,7 +3,7 @@
  * Imported in nuxt.config.ts
  */
 // Variables and Mixins
-@import './abstracts/index';
+@use 'abstracts';
 
 // Base
-@import './base/index';
+@use 'base';

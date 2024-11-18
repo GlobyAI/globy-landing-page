@@ -1,12 +1,12 @@
-@import './textfield';
-@import './button';
-@import './message';
-@import './select-box';
+@forward './textfield';
+@forward './button';
+@forward './message';
+@forward './select-box';
 
-@import './header';
-@import './hero';
-@import './howItWorks';
-@import './plans';
-@import './join';
-@import './sign-up-form';
-@import './footer';
+@forward './header';
+@forward './hero';
+@forward './howItWorks';
+@forward './plans';
+@forward './join';
+@forward './sign-up-form';
+@forward './footer';

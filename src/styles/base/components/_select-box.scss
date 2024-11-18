@@ -1,3 +1,5 @@
+@use '../../abstracts' as *;
+
 .select-box {
   width: 100%;
   border: none;
@@ -49,10 +51,15 @@
       padding: 1rem;
       padding-left: 3.2rem;
       background-color: $input-bg;
-      @include text($text-secondary, 400, 1.2rem);
-      @include flex(left, center);
       border-color: transparent;
       border-radius: 0.6rem;
+      &:not(:disabled):focus,
+      &:not(:disabled):focus-within,
+      &:not(:disabled):hover {
+        border-color: $input-border-active;
+      }
+      @include text($text-secondary, 400, 1.2rem);
+      @include flex(left, center);
       @include breakpoint(md) {
         font-size: 1.4rem;
       }
@@ -65,11 +72,6 @@
         padding: 1.6rem;
         padding-left: 5.6rem;
         height: 5.6rem;
-      }
-      &:not(:disabled):focus,
-      &:not(:disabled):focus-within,
-      &:not(:disabled):hover {
-        border-color: $input-border-active;
       }
     }
     #overlay {
@@ -127,8 +129,8 @@
           width: 100%;
           padding: 0.8rem 1.6rem;
           text-align: left;
-          @include text($text-secondary, 400, 1.2rem);
           cursor: pointer;
+          @include text($text-secondary, 400, 1.2rem);
           @include breakpoint(md) {
             font-size: 1.4rem;
           }

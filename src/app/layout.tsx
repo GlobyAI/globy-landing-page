@@ -8,19 +8,11 @@ export const metadata: Metadata = {
   description: METADATA.DESCRIPTION,
   applicationName: METADATA.NAME,
   openGraph: {
-    title: METADATA.TITLE,
+    title: METADATA.OG.TITLE,
     description: METADATA.OG.DESCRIPTION,
-    url: METADATA.APP_URL,
+    url: METADATA.OG.URL,
     siteName: METADATA.NAME,
     type: 'website',
-    images: [
-      {
-        url: '/images/favicon-512x512.png',
-        width: 512,
-        height: 512,
-        alt: 'Globy link preview icon',
-      },
-    ],
     countryName: 'Sweden',
   },
   generator: METADATA.NAME,

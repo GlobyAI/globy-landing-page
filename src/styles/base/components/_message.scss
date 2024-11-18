@@ -1,3 +1,5 @@
+@use '../../abstracts' as *;
+
 .message {
   width: 100%;
   padding: 1.1rem;
@@ -39,14 +41,14 @@
   right: 95%;
   z-index: 10;
   border: 0.1rem solid $border-primary;
+  border-radius: 50%;
+  background-color: $gray-100;
   @include box(2.6rem, 2.6rem);
   @include breakpoint(lg) {
     @include box(4rem, 4rem);
   }
   @include flex(center, center);
-  border-radius: 50%;
-  box-shadow: $shadow;
-  background-color: $gray-100;
+  @include shadow($shadow);
   svg > * {
     fill: $text-secondary;
   }
