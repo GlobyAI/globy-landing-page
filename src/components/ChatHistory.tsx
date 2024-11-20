@@ -48,7 +48,7 @@ export default function ChatHistory({
           <Message>
             <TypingAnimation
               message="  Congratulations on starting your own business! 🎉"
-              boldPart="What business should you start?"
+              boldPart=" What business should you start?"
               onComplete={() => setFirstGlobyMessageDone(true)}
               delay={0}
             />
@@ -58,7 +58,7 @@ export default function ChatHistory({
         {firstGlobyMessageDone && (
           <Message>
             Congratulations on starting your own business! 🎉{' '}
-            <span className="bold">What business should you start?</span>
+            <span className="bold"> What business should you start?</span>
           </Message>
         )}
 
@@ -89,7 +89,7 @@ export default function ChatHistory({
             <Message>
               <TypingAnimation
                 message="  Hair salon is a great business! We’ve analyzed thousands of webpages in this domain and are ready to provide you with the best practices."
-                boldPart="Do you have a website already?"
+                boldPart=" Do you have a website already?"
                 onComplete={() => setThirdGlobyMessageDone(true)}
                 delay={0}
               />
@@ -102,7 +102,7 @@ export default function ChatHistory({
               Hair salon is a great business! We’ve analyzed thousands of
               webpages in this domain and are ready to provide you with the best
               practices.{' '}
-              <span className="bold">Do you have a website already?</span>
+              <span className="bold"> Do you have a website already?</span>
             </Message>
 
             {/* Second Customer Response */}

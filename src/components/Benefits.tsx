@@ -25,7 +25,7 @@ export default function Benefits() {
           return () => timers.forEach(clearTimeout)
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.7 },
     )
 
     if (currentBenefitsRef) {
