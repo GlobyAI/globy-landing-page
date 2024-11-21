@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
-import AppWindowIcon from './AppWindowIcon'
+import AppWindowIcon from './Icons/AppWindowIcon'
 import MessageCircleHeartIcon from './Icons/MessageCircleHeartIcon'
 import AlarmIcon from './Icons/AlarmClockIcon'
 import EarthIcon from './Icons/EarthIcon'
