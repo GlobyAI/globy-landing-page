@@ -61,7 +61,7 @@ export default function Subscription() {
             </div>
 
             <Link href="#join">
-              <Button globyIcon={false}>Get started</Button>
+              <Button>Get started</Button>
             </Link>
 
             <ul className="support-details">

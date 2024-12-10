@@ -8,6 +8,7 @@ import UserErrorIcon from 'public/icons/user-error.svg'
 import useForm from '@/hooks/useForm'
 import { industries } from '@/helpers/variables'
 import SelectBox from './SelectBox'
+import GlobyIcon from 'public/icons/globy.svg'
 
 export default function SignUpForm() {
   const {
@@ -72,7 +73,12 @@ export default function SignUpForm() {
         message={errors.industry}
       />
 
-      <Button type="button" onClick={handleSubmit} disabled={isPending}>
+      <Button
+        type="button"
+        onClick={handleSubmit}
+        disabled={isPending}
+        icon={<GlobyIcon />}
+      >
         Join the waiting list
       </Button>
     </form>

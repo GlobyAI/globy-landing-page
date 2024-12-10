@@ -1,16 +1,15 @@
 'use client'
 import React from 'react'
-import GlobyIcon from 'public/icons/globy.svg'
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  globyIcon?: boolean
+  icon?: React.ReactNode
   children: React.ReactNode
 }
 
-export default function Button({ globyIcon = true, children, ...rest }: Props) {
+export default function Button({ icon, children, ...rest }: Props) {
   return (
     <button {...rest}>
-      {globyIcon && <GlobyIcon />}
+      {icon}
       {children}
     </button>
   )

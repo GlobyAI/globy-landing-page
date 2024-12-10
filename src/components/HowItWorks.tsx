@@ -127,7 +127,7 @@ export default function HowItWorks() {
                 </span>
               </p>
               <Link href="#join" className="presentation__link">
-                <Button>Sign up now</Button>
+                <Button icon={<GlobyIcon />}>Sign up now</Button>
               </Link>
             </div>
           </div>

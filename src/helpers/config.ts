@@ -1,5 +1,7 @@
 export const APP_ROUTERS = {
   INDEX: '/',
+  FORGOT_PASSWORD: '/forgot-password',
+  SIGN_IN: '/sign-in',
 }
 
 const DOMAIN = 'https://globy.ai'

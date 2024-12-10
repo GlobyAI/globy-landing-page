@@ -1,6 +1,9 @@
 import Button from './Button'
 import Link from 'next/link'
 import Benefits from './Benefits'
+import GlobyIcon from 'public/icons/globy.svg'
+import { APP_ROUTERS } from '@/helpers/config'
+
 export default function Hero() {
   return (
     <section className="globy__hero">
@@ -17,8 +20,8 @@ export default function Hero() {
           Join our waiting list and be among the first to get access when we
           launch!
         </p>
-        <Link href="#join">
-          <Button>Join now</Button>
+        <Link href={APP_ROUTERS.SIGN_IN}>
+          <Button icon={<GlobyIcon />}> Try now</Button>
         </Link>
       </div>
 
